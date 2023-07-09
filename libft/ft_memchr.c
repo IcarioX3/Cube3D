@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: icario <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/07/09 13:33:36 by icario           ###   ########.fr       */
+/*   Created: 2022/05/13 14:55:49 by icario            #+#    #+#             */
+/*   Updated: 2022/05/31 17:35:45 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include <stddef.h>
 
-int	main(void)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	return (0);
+	while (n > 0)
+	{
+		if ((*(unsigned char *) s) == (unsigned char) c)
+			return ((void *) s);
+		s++;
+		n--;
+	}
+	return (NULL);
 }

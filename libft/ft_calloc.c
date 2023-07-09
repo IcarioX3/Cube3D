@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/07/09 13:33:36 by icario           ###   ########.fr       */
+/*   Created: 2022/05/20 11:57:34 by ablevin           #+#    #+#             */
+/*   Updated: 2023/01/19 11:20:17 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include <stdlib.h>
+#include "libft.h"
 
-int	main(void)
+void	*ft_calloc(int nmemb, int size)
 {
-	return (0);
+	void	*dest;
+
+	if (nmemb && (nmemb * size / nmemb) != size)
+		return (0);
+	dest = malloc(nmemb * size);
+	if (!dest)
+		return (0);
+	ft_bzero(dest, (nmemb * size));
+	return (dest);
 }

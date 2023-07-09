@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ablevin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/07/09 13:33:36 by icario           ###   ########.fr       */
+/*   Created: 2022/05/10 14:55:16 by ablevin           #+#    #+#             */
+/*   Updated: 2022/05/10 15:05:46 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include <stddef.h>
 
-int	main(void)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	return (0);
+	char	*mem;
+
+	mem = s;
+	while (n > 0)
+	{
+		*mem = c;
+		mem++;
+		n--;
+	}
+	return (s);
 }
