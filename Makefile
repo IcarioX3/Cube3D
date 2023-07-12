@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/09 12:22:46 by icario            #+#    #+#              #
-#    Updated: 2023/07/09 13:32:14 by icario           ###   ########.fr        #
+#    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
+#    Updated: 2023/07/12 18:54:26 by icario           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ END		= \033[0m
 NAME 		= cube3D
 LIBNAME 	= libft.a
 CC 			= gcc
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra -g3
 MLXFLAGS	= -L mlx -lm -lmlx -lXext -lX11
 
 SRC_DIR = src
@@ -29,7 +29,14 @@ INC_DIR = inc
 LIB_DIR = libft
 MLX_DIR = mlx
 
-_SRC	= main.c
+ERROR_DIR	= error
+
+ERROR	= exit_msg.c
+
+SRC_ERROR	= $(addprefix $(ERROR_DIR)/, $(ERROR))
+
+_SRC	= main.c \
+		$(SRC_ERROR)
 
 SRC		= $(addprefix $(SRC_DIR)/, $(_SRC))
 OBJ		= $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
@@ -37,8 +44,8 @@ HEADER	= $(addprefix $(INC_DIR)/, $(NAME).h)
 
 #### Makefile work ####
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
-		@mkdir -p $(@D)
-		@$(CC) -c $(CFLAGS) -I$(LIB_DIR) -I$(INC_DIR) -Imlx $< -o $@
+		@mkdir -p $(@D)		
+		@$(CC) -c $(CFLAGS) -I$(LIB_DIR) -Imlx -I$(INC_DIR) $< -o $@
 		
 all: $(NAME)
 
@@ -47,7 +54,7 @@ $(NAME): $(OBJ) $(HEADER)
 		@make -s -C $(LIB_DIR)
 		@echo "$(GREEN)OK!$(END)"
 		@echo "Baking $(NAME)..."
-		@$(CC) -I$(INC_DIR) -I$(LIB_DIR) -Imlx -o $@ $^ $(LIB_DIR/$(LIBNAME)) $(MLXFLAGS) $(CFLAGS)
+		@$(CC) -I$(INC_DIR) -I$(LIB_DIR) -o $@ $^ $(LIB_DIR)/$(LIBNAME) $(MLXFLAGS) -Imlx $(CFLAGS)
 		@echo "$(GREEN)OK!$(END)"
 		@echo "$(BLUE)$(NAME) READY !$(END)"
 		
@@ -67,4 +74,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-		
