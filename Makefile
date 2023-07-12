@@ -6,7 +6,7 @@
 #    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/07/12 18:54:26 by icario           ###   ########.fr        #
+#    Updated: 2023/07/12 19:35:39 by icario           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,13 +30,18 @@ LIB_DIR = libft
 MLX_DIR = mlx
 
 ERROR_DIR	= error
+CLEAN_DIR		= clean
 
 ERROR	= exit_msg.c
+CLEAN	= clean_mlx.c \
+		terminate.c
 
 SRC_ERROR	= $(addprefix $(ERROR_DIR)/, $(ERROR))
+SRC_CLEAN	= $(addprefix $(CLEAN_DIR)/, $(CLEAN))
 
 _SRC	= main.c \
-		$(SRC_ERROR)
+		$(SRC_ERROR) \
+		$(SRC_CLEAN)
 
 SRC		= $(addprefix $(SRC_DIR)/, $(_SRC))
 OBJ		= $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
