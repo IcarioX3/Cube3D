@@ -6,7 +6,7 @@
 #    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/07/13 14:11:22 by icario           ###   ########.fr        #
+#    Updated: 2023/07/13 14:47:20 by icario           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,13 +38,15 @@ CLEAN	= clean_mlx.c \
 		clean_img.c \
 		terminate.c
 INIT	= init_structs.c \
-		init.c
+		init_mlx.c \
+		init.c 
 
 SRC_ERROR	= $(addprefix $(ERROR_DIR)/, $(ERROR))
 SRC_CLEAN	= $(addprefix $(CLEAN_DIR)/, $(CLEAN))
 SRC_INIT	= $(addprefix $(INIT_DIR)/, $(INIT))
 
 _SRC	= main.c \
+		start.c \
 		$(SRC_ERROR) \
 		$(SRC_CLEAN) \
 		$(SRC_INIT)

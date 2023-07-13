@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/07/13 14:31:13 by icario           ###   ########.fr       */
+/*   Updated: 2023/07/13 14:50:10 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ typedef struct s_game
 
 //PROTOTYPES
 
+void	start(t_game *game);
+
 //CLEAN
 void	clean_mlx(t_mlx *mlx);
 void	clean_img(t_mlx *mlx);
@@ -51,5 +53,6 @@ void	exit_msg(char *msg, t_game *game);
 //INIT
 void	init(t_game *game);
 void	init_mlx_struct(t_mlx *mlx);
+void	init_mlx(t_game *game);
 
 #endif
