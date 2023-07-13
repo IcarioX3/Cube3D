@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/07/13 14:50:10 by icario           ###   ########.fr       */
+/*   Updated: 2023/07/13 15:18:37 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 
 # define WIDTH 1920
 # define HEIGHT 1080
+# define TITLE "CUBE3D"
+
+# define DARK_GREEN 0x006400
+# define DARK_BLUE 0x00008B
 
 //STRUCTS
 
@@ -37,11 +41,14 @@ typedef struct s_mlx
 typedef struct s_game
 {
 	t_mlx	mlx;
+	int		floor_color;
+	int		ceiling_color;
 }t_game;
 
 //PROTOTYPES
 
 void	start(t_game *game);
+void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 
 //CLEAN
 void	clean_mlx(t_mlx *mlx);
@@ -53,6 +60,7 @@ void	exit_msg(char *msg, t_game *game);
 //INIT
 void	init(t_game *game);
 void	init_mlx_struct(t_mlx *mlx);
+void	init_game_struct(t_game *game);
 void	init_mlx(t_game *game);
 
 #endif
