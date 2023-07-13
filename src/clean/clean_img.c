@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   terminate.c                                        :+:      :+:    :+:   */
+/*   clean_img.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 19:32:30 by icario            #+#    #+#             */
-/*   Updated: 2023/07/13 13:45:37 by icario           ###   ########.fr       */
+/*   Created: 2023/07/13 13:43:23 by icario            #+#    #+#             */
+/*   Updated: 2023/07/13 13:44:49 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3D.h"
 
-int	terminate(t_game *game)
+void	clean_img(t_mlx *mlx)
 {
-	clean_img(&game->mlx);
-	clean_mlx(&game->mlx);
-	exit(EXIT_SUCCESS);
-	return (0);
+	if (mlx->img)
+		mlx_destroy_image(mlx->ptr, mlx->img);
 }

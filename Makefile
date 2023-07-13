@@ -6,7 +6,7 @@
 #    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/07/12 19:35:39 by icario           ###   ########.fr        #
+#    Updated: 2023/07/13 14:11:22 by icario           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,18 +30,24 @@ LIB_DIR = libft
 MLX_DIR = mlx
 
 ERROR_DIR	= error
-CLEAN_DIR		= clean
+CLEAN_DIR	= clean
+INIT_DIR	= init
 
 ERROR	= exit_msg.c
 CLEAN	= clean_mlx.c \
+		clean_img.c \
 		terminate.c
+INIT	= init_structs.c \
+		init.c
 
 SRC_ERROR	= $(addprefix $(ERROR_DIR)/, $(ERROR))
 SRC_CLEAN	= $(addprefix $(CLEAN_DIR)/, $(CLEAN))
+SRC_INIT	= $(addprefix $(INIT_DIR)/, $(INIT))
 
 _SRC	= main.c \
 		$(SRC_ERROR) \
-		$(SRC_CLEAN)
+		$(SRC_CLEAN) \
+		$(SRC_INIT)
 
 SRC		= $(addprefix $(SRC_DIR)/, $(_SRC))
 OBJ		= $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)

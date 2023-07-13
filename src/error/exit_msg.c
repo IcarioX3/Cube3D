@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    exit_msg.c                                        :+:      :+:    :+:   */
+/*   exit_msg.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:41:57 by icario            #+#    #+#             */
-/*   Updated: 2023/07/12 16:46:29 by icario           ###   ########.fr       */
+/*   Updated: 2023/07/13 14:31:07 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3D.h"
 
-void	exit_msg(char *msg)
+void	exit_msg(char *msg, t_game *game)
 {
 	ft_putstr_fd(msg, 2);
+	terminate(game);
 	exit(EXIT_FAILURE);
 }

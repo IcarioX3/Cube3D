@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:10:28 by icario            #+#    #+#             */
-/*   Updated: 2023/07/12 19:12:53 by icario           ###   ########.fr       */
+/*   Updated: 2023/07/13 13:47:07 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	clean_mlx(t_mlx *mlx)
 {
-	mlx_destroy_window(mlx->ptr, mlx->win);
-	mlx_destroy_display(mlx->ptr);
+	if (mlx->win)
+		mlx_destroy_window(mlx->ptr, mlx->win);
+	if (mlx->ptr)
+		mlx_destroy_display(mlx->ptr);
 	free(mlx->ptr);
 }
