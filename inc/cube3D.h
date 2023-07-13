@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/07/12 19:35:14 by icario           ###   ########.fr       */
+/*   Updated: 2023/07/13 10:42:51 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ typedef struct s_mlx
 {
 	void	*ptr;
 	void	*win;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
 }t_mlx;
 
 typedef struct s_game
