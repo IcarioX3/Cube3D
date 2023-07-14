@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/07/13 15:18:37 by icario           ###   ########.fr       */
+/*   Updated: 2023/07/14 12:20:32 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include "mlx.h"
+# include <math.h>
 
 //DEFINES
 
@@ -22,8 +23,8 @@
 # define HEIGHT 1080
 # define TITLE "CUBE3D"
 
-# define DARK_GREEN 0x006400
-# define DARK_BLUE 0x00008B
+# define BLUE_SKY 0x87CEEB
+# define GREEN_GRASS 0x00FF00
 
 //STRUCTS
 
@@ -43,6 +44,12 @@ typedef struct s_game
 	t_mlx	mlx;
 	int		floor_color;
 	int		ceiling_color;
+	float	pos_x;
+	float	pos_y;
+	float	dir_x;
+	float	dir_y;
+	float	plane_x;
+	float	plane_y;
 }t_game;
 
 //PROTOTYPES
