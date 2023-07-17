@@ -3,42 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+        */
+/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/07/17 17:36:23 by franckgojar      ###   ########.fr       */
+/*   Updated: 2023/07/17 22:56:33 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
-
-char	*get_map(int fd)
-{
-	char	*mapgnl;
-	char	*map;
-
-	mapgnl = NULL;
-	map = NULL;
-	if (mapgnl == NULL)
-	{
-		mapgnl = get_next_line(fd);
-		if (mapgnl == NULL)
-			return (NULL);
-		map = ft_strdup(mapgnl);
-		if (map == NULL)
-			return (NULL);
-		free(mapgnl);
-	}
-	while (mapgnl != NULL)
-	{
-		mapgnl = get_next_line(fd);
-		if (mapgnl != NULL)
-			map = ft_strjoin(map, mapgnl);
-		free(mapgnl);
-	}
-	return (map);
-}
-
 
 int	main(int ac, char **av)
 {
@@ -67,12 +39,9 @@ int	main(int ac, char **av)
 		free(vars);
 		return (0);
 	}
-	int i = 0;
-	while (vars->map[i])
-	{
-		printf("%s\n", vars->map[i]);
-		i++;
-	}
+	free(vars->mapline);
+	free_double_tab(vars->map);
+	free(vars);
 	close(fd);
 	return (0);
 }

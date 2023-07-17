@@ -6,7 +6,7 @@
 #    By: franck <franck@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/07/17 18:06:48 by franck           ###   ########.fr        #
+#    Updated: 2023/07/17 22:56:15 by franck           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,14 +29,15 @@ INC_DIR = inc
 LIB_DIR = libft
 MLX_DIR = mlx
 
-#PARSING_DIR	= parsing
+PARSING_DIR	= parsing
 
-#PARSING	= 
+PARSING	= free_double_tab.c \
+			get_map.c \
 
-#SRC_ERROR	= $(addprefix $(PARSING_DIR)/, $(PARSING))
+SRC_PARSING	= $(addprefix $(PARSING_DIR)/, $(PARSING))
 
 _SRC	= main.c \
-#		$(SRC_PARSING) \
+		$(SRC_PARSING) \
 
 SRC		= $(addprefix $(SRC_DIR)/, $(_SRC))
 OBJ		= $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)

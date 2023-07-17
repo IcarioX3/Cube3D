@@ -17,4 +17,8 @@ typedef struct s_vars
 	char	*mapline;
 }	t_vars;
 
+
+void	free_double_tab(char **args);
+char	*get_map(int fd);
+
 #endif
