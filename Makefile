@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+         #
+#    By: franck <franck@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/07/17 17:55:01 by franckgojar      ###   ########.fr        #
+#    Updated: 2023/07/17 18:06:48 by franck           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ NAME 		= cube3D
 LIBNAME 	= libft.a
 CC 			= gcc
 CFLAGS		= -Wall -Werror -Wextra -g3
-MLXFLAGS	= -L mlx -lm -lmlx -lXext -lX11
+#MLXFLAGS	= -L mlx -lm -lmlx -lXext -lX11
 
 SRC_DIR = src
 OBJ_DIR = obj
