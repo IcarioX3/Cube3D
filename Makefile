@@ -6,7 +6,7 @@
 #    By: franck <franck@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/07/17 23:07:54 by franck           ###   ########.fr        #
+#    Updated: 2023/07/20 02:20:35 by franck           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,8 @@ PARSING_DIR	= parsing
 PARSING	= free_double_tab.c \
 			get_map.c \
 			parsing.c \
+			split_file_map.c \
+			check_map.c \
 
 SRC_PARSING	= $(addprefix $(PARSING_DIR)/, $(PARSING))
 
