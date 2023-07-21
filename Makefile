@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
+#    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/07/13 14:47:20 by icario           ###   ########.fr        #
+#    Updated: 2023/07/21 11:55:49 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ CLEAN	= clean_mlx.c \
 		terminate.c
 INIT	= init_structs.c \
 		init_mlx.c \
+		init_game.c \
 		init.c 
 
 SRC_ERROR	= $(addprefix $(ERROR_DIR)/, $(ERROR))

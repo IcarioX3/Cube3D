@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/07/17 15:24:57 by antoine          ###   ########.fr       */
+/*   Updated: 2023/07/21 12:00:54 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,46 @@ typedef struct s_mlx
 	int		endian;
 }t_mlx;
 
+typedef struct s_player
+{
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	int		map_x;
+	int		map_y;
+}t_player;
+
+typedef struct s_camera
+{
+	double	plane_x;
+	double	plane_y;
+	double	camera_x;
+}t_camera;
+
+typedef struct s_raycaster
+{
+	double	ray_dir_x;
+	double	ray_dir_y;
+	double	side_dist_x;
+	double	side_dist_y;
+	double	delta_dist_x;
+	double	delta_dist_y;
+	double	perp_wall_dist;
+	int		step_x;
+	int		step_y;
+	int		hit;
+	int		side;
+}t_raycaster;
+
 typedef struct s_game
 {
 	t_mlx	mlx;
+	t_player	player;
+	t_camera	camera;
+	t_raycaster	raycaster;
 	int		floor_color;
 	int		ceiling_color;
-	float	pos_x;
-	float	pos_y;
-	float	dir_x;
-	float	dir_y;
-	float	plane_x;
-	float	plane_y;
 }t_game;
 
 //PROTOTYPES
@@ -68,6 +97,10 @@ void	exit_msg(char *msg, t_game *game);
 void	init(t_game *game);
 void	init_mlx_struct(t_mlx *mlx);
 void	init_game_struct(t_game *game);
+void	init_player_struct(t_player *player);
+void	init_camera_struct(t_camera *camera);
+void	init_raycaster_struct(t_raycaster *raycaster);
 void	init_mlx(t_game *game);
+void	init_game(t_game *game);
 
 #endif
