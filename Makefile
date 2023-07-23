@@ -6,7 +6,7 @@
 #    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/07/21 11:55:49 by antoine          ###   ########.fr        #
+#    Updated: 2023/07/23 12:56:55 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,28 +29,32 @@ INC_DIR = inc
 LIB_DIR = libft
 MLX_DIR = mlx
 
-ERROR_DIR	= error
-CLEAN_DIR	= clean
-INIT_DIR	= init
+ERROR_DIR		= error
+CLEAN_DIR		= clean
+INIT_DIR		= init
+RAYCASTING_DIR	= raycasting
 
-ERROR	= exit_msg.c
-CLEAN	= clean_mlx.c \
-		clean_img.c \
-		terminate.c
-INIT	= init_structs.c \
-		init_mlx.c \
-		init_game.c \
-		init.c 
+ERROR		= exit_msg.c
+CLEAN		= clean_mlx.c \
+			clean_img.c \
+			terminate.c
+INIT		= init_structs.c \
+			init_mlx.c \
+			init_game.c \
+			init.c
+RAYCASTING	= raycaster.c
 
-SRC_ERROR	= $(addprefix $(ERROR_DIR)/, $(ERROR))
-SRC_CLEAN	= $(addprefix $(CLEAN_DIR)/, $(CLEAN))
-SRC_INIT	= $(addprefix $(INIT_DIR)/, $(INIT))
+SRC_ERROR		= $(addprefix $(ERROR_DIR)/, $(ERROR))
+SRC_CLEAN		= $(addprefix $(CLEAN_DIR)/, $(CLEAN))
+SRC_INIT		= $(addprefix $(INIT_DIR)/, $(INIT))
+SRC_RAYCASTING	= $(addprefix $(RAYCASTING_DIR)/, $(RAYCASTING))
 
 _SRC	= main.c \
 		start.c \
 		$(SRC_ERROR) \
 		$(SRC_CLEAN) \
-		$(SRC_INIT)
+		$(SRC_INIT) \
+		$(SRC_RAYCASTING)
 
 SRC		= $(addprefix $(SRC_DIR)/, $(_SRC))
 OBJ		= $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)

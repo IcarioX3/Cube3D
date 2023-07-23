@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/07/21 12:00:54 by antoine          ###   ########.fr       */
+/*   Updated: 2023/07/23 13:03:36 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@
 
 # define WIDTH 1920
 # define HEIGHT 1080
+# define CAMERA_PLANE_X 0
+# define CAMERA_PLANE_Y 0.9
 # define TITLE "CUBE3D"
 
 # define BLUE_SKY 0x87CEEB
 # define GREEN_GRASS 0x00FF00
+
+# define MAP 
 
 //STRUCTS
 
@@ -102,5 +106,7 @@ void	init_camera_struct(t_camera *camera);
 void	init_raycaster_struct(t_raycaster *raycaster);
 void	init_mlx(t_game *game);
 void	init_game(t_game *game);
+//RAYCASTER
+void	raycaster(t_game *game);
 
 #endif

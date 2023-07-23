@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:26:52 by antoine           #+#    #+#             */
-/*   Updated: 2023/07/21 12:26:25 by antoine          ###   ########.fr       */
+/*   Updated: 2023/07/23 11:02:11 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 //Plane x and plane y are the camera plane coordinates
 void	init_camera(t_camera *camera)
 {
-	camera->plane_x = 0;
-	camera->plane_y = 0.9;
+	camera->plane_x = CAMERA_PLANE_X;
+	camera->plane_y = CAMERA_PLANE_Y;
 }
 
 /*Pos x and pos y are the position of the player in the map
