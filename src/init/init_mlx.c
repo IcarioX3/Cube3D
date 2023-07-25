@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:40:45 by icario            #+#    #+#             */
-/*   Updated: 2023/07/13 15:11:16 by icario           ###   ########.fr       */
+/*   Updated: 2023/07/24 15:43:08 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	init_mlx(t_game *game)
 	game->mlx.win = mlx_new_window(game->mlx.ptr, WIDTH, HEIGHT, TITLE);
 	if (!game->mlx.win)
 		exit_msg("Error\nmlx_new_window() failed\n", game);
-	game->mlx.img = mlx_new_image(game->mlx.ptr, WIDTH, HEIGHT);
+ 	game->mlx.img = mlx_new_image(game->mlx.ptr, WIDTH, HEIGHT);
 	if (!game->mlx.img)
 		exit_msg("Error\nmlx_new_image() failed\n", game);
 	game->mlx.addr = mlx_get_data_addr(game->mlx.img, &game->mlx.bits_per_pixel,

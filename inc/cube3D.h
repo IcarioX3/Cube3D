@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/07/23 13:03:36 by antoine          ###   ########.fr       */
+/*   Updated: 2023/07/24 14:57:06 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ void	start(t_game *game);
 void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 
 //CLEAN
-void	clean_mlx(t_mlx *mlx);
-void	clean_img(t_mlx *mlx);
+void	clean_mlx(t_game *game);
+void	clean_img(t_game *game);
 int		terminate(t_game *game);
 
 //ERROR
