@@ -52,7 +52,7 @@ int    split_file_map(t_vars **vars)
 
     i = 0;
     len = 0;
-    (*vars)->len_tab = find_longest_line((*vars)->map, 6);
+    (*vars)->longest_line = find_longest_line((*vars)->map, 6);
     if (vars == NULL || *vars == NULL)
         return (1);
     (*vars)->map_info = malloc(7 * sizeof(char*));
@@ -70,7 +70,7 @@ int    split_file_map(t_vars **vars)
     i = 0;
     while (i < len - 6)
     {
-        tmp[i] = ft_strdup_cub((*vars)->map[i + 6], (*vars)->len_tab);
+        tmp[i] = ft_strdup_cub((*vars)->map[i + 6], (*vars)->longest_line);
         i++;
     }
     free_double_tab((*vars)->map);

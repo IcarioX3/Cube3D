@@ -15,13 +15,14 @@ int check_map(t_vars **vars, char **map)
         {
             if (map[i][j] != '0' && map[i][j] != '1' 
             && map[i][j] != 'N' && map[i][j] != 'S' && map[i][j]!= 'E' 
-            && map[i][j] != 'O' && map[i][j] != ' ')
+            && map[i][j] != 'W' && map[i][j] != ' ')
                 return (write (2, "Error : Wrong input map\n", 24), 1);
             if (map[i][j] == 'N' || map[i][j] == 'S' 
-                || map[i][j]== 'E' || map[i][j] == 'O')
+                || map[i][j]== 'E' || map[i][j] == 'W')
             {
                 (*vars)->begin_x = i;
                 (*vars)->begin_y = j;
+                (*vars)->player = map[i][j];
                 nb_player++;
             }
             j++;

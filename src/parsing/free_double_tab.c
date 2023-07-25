@@ -7,6 +7,8 @@ void	free_double_tab(char **args)
 
 	i = 0;
 	size = 0;
+	if (args == NULL)
+		return ;
 	while (args[size])
 		size++;
 	while (i < size)

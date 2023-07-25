@@ -16,9 +16,10 @@ typedef struct s_vars
 	char	**map;
 	char	**map_info;
 	char	*mapline;
-	int		len_tab;
+	int		longest_line;
 	int		begin_x;
 	int		begin_y;
+	char	player;
 }	t_vars;
 
 
