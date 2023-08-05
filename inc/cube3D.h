@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/07/24 14:57:06 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/05 18:50:47 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,6 @@ void	init_mlx(t_game *game);
 void	init_game(t_game *game);
 //RAYCASTER
 void	raycaster(t_game *game);
+void	draw_pixels(t_game *game, int x);
 
 #endif

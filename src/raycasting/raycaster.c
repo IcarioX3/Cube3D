@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 12:42:36 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/05 12:56:02 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/05 18:51:07 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,10 +219,6 @@ void	raycaster(t_game *game)
 	};
 
 	int	x;
-	int	y;
-	int	lineHeight;
-	int	drawStart;
-	int	drawEnd;
 
 	x = 0;
 	while (x < WIDTH)
@@ -231,22 +227,7 @@ void	raycaster(t_game *game)
 		init_x_wall_detection(game);
 		init_y_wall_detection(game);
 		dda(game, map);
-		lineHeight = (int)(HEIGHT / game->raycaster.perp_wall_dist);
-		drawStart = -lineHeight / 2 + HEIGHT / 2;
-		if (drawStart < 0)
-			drawStart = 0;
-		drawEnd = lineHeight / 2 + HEIGHT / 2;
-		if (drawEnd >= HEIGHT)
-			drawEnd = HEIGHT - 1;
-		y = drawStart;
-		while (y < drawEnd)
-		{
-			if (game->raycaster.side == 1)
-				my_mlx_pixel_put(&game->mlx, x, y, 0xFF0000);
-			else
-				my_mlx_pixel_put(&game->mlx, x, y, 0xBB0000);
-			y++;
-		}
+		draw_pixels(game, x);
 		x++;
 	}
 }
