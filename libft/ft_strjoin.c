@@ -6,7 +6,7 @@
 /*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:19:50 by ablevin           #+#    #+#             */
-/*   Updated: 2023/07/17 23:41:10 by franck           ###   ########.fr       */
+/*   Updated: 2023/08/07 04:16:53 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,31 @@
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*s;
+	int		i;
+	int		j;
+	char	*str;
 
-	if (!s2)
-		return (s1);
-	if (!s1)
-	{
-		s = malloc((ft_strlen(s2) + 1) * sizeof(char));
-		if (!s)
-		{
-			free(s1);
-			ft_putstr_fd("Error: malloc failed\n", 2);
-			return (NULL);
-		}
-		ft_strlcpy(s, s2, ft_strlen(s2) + 1);
-		return (s);
-	}
-	s = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!s)
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
 		return (NULL);
-	ft_strlcpy(s, s1, ft_strlen(s1) + 1);
-	ft_strlcat(s, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
-	s[ft_strlen(s)] = '\0';
+	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
+		return (NULL);
+	while (s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = 0;
 	free(s1);
-	return (s);
+	return (str);
 }
 
 /*

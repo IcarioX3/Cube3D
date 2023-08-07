@@ -15,6 +15,8 @@ typedef struct s_vars
 {
 	char	**map;
 	char	**map_info;
+	char	*floor_info;
+	char	*ceiling_info;
 	char	*mapline;
 	int		longest_line;
 	int		begin_x;
@@ -25,7 +27,7 @@ typedef struct s_vars
 
 void	free_double_tab(char **args);
 char	*get_map(int fd);
-int parsing(t_vars **vars);
+int parsing(t_vars **vars, char **av);
 int    split_file_map(t_vars **vars);
 int check_map(t_vars **vars, char **map);
 

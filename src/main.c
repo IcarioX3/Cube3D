@@ -6,7 +6,7 @@
 /*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/07/25 15:28:42 by franck           ###   ########.fr       */
+/*   Updated: 2023/08/07 04:14:20 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 	t_vars	*vars;
 
 	if (ac != 2)
-		return (0);
+		return (write (2, "Error : Wrong input\n", 21), 1);	
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0)
 		return (1); //perror
@@ -39,7 +39,7 @@ int	main(int ac, char **av)
 		free(vars);
 		return (0);
 	}
-	parsing(&vars);
+	parsing(&vars, av);
 	//int i = 0;
 	// while (vars->map[i])
 	// {
@@ -50,6 +50,8 @@ int	main(int ac, char **av)
 	free(vars->mapline);
 	free_double_tab(vars->map);
 	free_double_tab(vars->map_info);
+	free(vars->floor_info);
+	free(vars->ceiling_info);
 	free(vars);
 	close(fd);
 	return (0);
