@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/08/05 18:50:47 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/07 12:40:59 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,12 @@ typedef struct s_raycaster
 
 typedef struct s_game
 {
-	t_mlx	mlx;
+	t_mlx		mlx;
 	t_player	player;
 	t_camera	camera;
 	t_raycaster	raycaster;
-	int		floor_color;
-	int		ceiling_color;
+	int			floor_color;
+	int			ceiling_color;
 }t_game;
 
 //PROTOTYPES
