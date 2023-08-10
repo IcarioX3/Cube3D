@@ -126,13 +126,13 @@ int init_texture_info(t_vars **vars)
     {
         if ((*vars)->map_info[i][0] == 'F')
         {
-            (*vars)->floor_info = strdup((*vars)->map_info[i]);
+            (*vars)->floor_info = ft_strdup((*vars)->map_info[i]);
             if ((*vars)->floor_info == NULL)
                 return (1);
         }
         if ((*vars)->map_info[i][0] == 'C')
         {
-            (*vars)->ceiling_info = strdup((*vars)->map_info[i]);
+            (*vars)->ceiling_info = ft_strdup((*vars)->map_info[i]);
             if ((*vars)->ceiling_info == NULL)
                 return (1);
         }
@@ -150,6 +150,8 @@ int check_floor_info(char *floor)
     i = 1;
     while (floor[i] == ' ')
         i++;
+    if (floor[i] == ',')
+        return (write (2, "Error : wrong texture input\n", 29), 1);
     while(floor[i])
     {
         if ((floor[i] >= '0' && floor[i] <= '9') || floor[i] == ',')
@@ -179,6 +181,8 @@ int check_ceiling_info(char *ceiling)
     i = 1;
     while (ceiling[i] == ' ')
         i++;
+    if (ceiling[i] == ',')
+        return (write (2, "Error : wrong texture input\n", 29), 1);
     while(ceiling[i])
     {
         if ((ceiling[i] >= '0' && ceiling[i] <= '9') || ceiling[i] == ',')
@@ -199,13 +203,117 @@ int check_ceiling_info(char *ceiling)
     return (0);
 }
 
+int remove_until_first_digit_ceiling(t_vars **vars, char *str) 
+{
+    int len = 0;
+    int start = 0;
+    char *cpy = NULL;
+    char *ptr;
+    if (str == NULL || *str == '\0')
+        return (1);
+    ptr = str;
+    while (str[start] && !isdigit(*str))
+    {
+        str++; // Avance jusqu'au premier chiffre
+        start++;
+    }
+    while (*str)
+    {
+        len++;
+        str++;
+    }
+    str = ptr;
+    cpy = ft_substr(str, start, len);
+    if (!cpy)
+        return (1);
+    free ((*vars)->ceiling_info);
+    (*vars)->ceiling_info = cpy;
+    return (0);
+}
+
+int remove_until_first_digit_floor(t_vars **vars, char *str) 
+{
+    int len = 0;
+    int start = 0;
+    char *cpy = NULL;
+    char *ptr;
+    if (str == NULL || *str == '\0')
+        return (1);
+    ptr = str;
+    while (str[start] && !isdigit(*str))
+    {
+        str++; // Avance jusqu'au premier chiffre
+        start++;
+    }
+    while (*str)
+    {
+        len++;
+        str++;
+    }
+    str = ptr;
+    cpy = ft_substr(str, start, len);
+    if (!cpy)
+        return (1);
+    free ((*vars)->floor_info);
+    (*vars)->floor_info = cpy;
+    return (0);
+}
+
+int check_overflow(char *str)
+{
+    char **split;
+    int i;
+    int len = 0;
+    int tab[3];
+    i = 0;
+    split = NULL;
+    split = ft_split(str, ',');
+    while (i < 3)
+    {
+        while (split[i][len])
+        {
+            if (len > 2)
+            {
+                free_double_tab(split);
+                return (write (2, "Error : wrong texture input\n", 29), 1);
+            }
+            len++;
+        }
+        len = 0;
+        tab[i] = ft_atoi(split[i]);
+        if (tab[i] > 255)
+        {
+            free_double_tab(split);
+            return (write (2, "Error : wrong texture input\n", 29), 1);
+        }
+        i++;
+    }
+    free_double_tab(split);
+    return (0);
+}
+
+int check_texture_overflow(t_vars **vars)
+{
+    if (remove_until_first_digit_ceiling(vars, (*vars)->ceiling_info) == 1)
+        return (1);
+    if (remove_until_first_digit_floor(vars, (*vars)->floor_info) == 1)
+        return (1);
+    if (check_overflow((*vars)->floor_info) == 1)
+        return (1);
+    if (check_overflow((*vars)->ceiling_info) == 1)
+        return (1);
+    return (0);
+}
+
 int check_texture(t_vars **vars)
 {
     if (init_texture_info(vars) == 1)
         return (1);
-    if (check_floor_info((*vars)->floor_info))
+    if (check_floor_info((*vars)->floor_info) == 1)
         return (1);
-    if (check_ceiling_info((*vars)->ceiling_info))
+    if (check_ceiling_info((*vars)->ceiling_info) == 1)
+        return (1);
+    if (check_texture_overflow(vars) == 1)
         return (1);
     return (0);
 }
