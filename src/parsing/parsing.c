@@ -59,7 +59,6 @@ int fill(char** map)
             if (c == '0' || c == 'S' || c == 'N' || c == 'E' || c == 'W') {
                 // Vérification des voisins
                 int has_neighbor = 0;
-
                 // Voisin au-dessus
                 if (i > 0 && map[i - 1][j] == ' ')
                     has_neighbor = 1;
@@ -75,7 +74,7 @@ int fill(char** map)
                     has_neighbor = 1;
 
                 // Voisin à droite
-                if (map[i][j + 1] == '\0' && map[i][j + 1] == ' ')
+                if (map[i][j + 1] == '\0' || map[i][j + 1] == ' ')
                     has_neighbor = 1;
 
                 // Si un des voisins est différent d'un espace
@@ -119,9 +118,6 @@ int init_texture_info(t_vars **vars)
     int i;
 
     i = 0;
-    (*vars)->ceiling_info = NULL;
-    (*vars)->floor_info = NULL;
-
     while ((*vars)->map_info[i])
     {
         if ((*vars)->map_info[i][0] == 'F')

@@ -6,7 +6,7 @@
 /*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/08/07 04:14:20 by franck           ###   ########.fr       */
+/*   Updated: 2023/08/11 01:59:31 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ int	main(int ac, char **av)
 		free(vars);
 		return (0);
 	}
+	(vars)->ceiling_info = NULL;
+    (vars)->floor_info = NULL;
 	parsing(&vars, av);
-	//int i = 0;
+	// int i = 0;
 	// while (vars->map[i])
 	// {
 	// 	printf("%s\n", vars->map[i]);
@@ -50,8 +52,10 @@ int	main(int ac, char **av)
 	free(vars->mapline);
 	free_double_tab(vars->map);
 	free_double_tab(vars->map_info);
-	free(vars->floor_info);
-	free(vars->ceiling_info);
+	if (vars->floor_info)
+		free(vars->floor_info);
+	if (vars->ceiling_info)
+		free(vars->ceiling_info);
 	free(vars);
 	close(fd);
 	return (0);
