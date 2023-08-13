@@ -6,7 +6,7 @@
 #    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/05 18:46:51 by antoine          ###   ########.fr        #
+#    Updated: 2023/08/13 18:38:45 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ ERROR_DIR		= error
 CLEAN_DIR		= clean
 INIT_DIR		= init
 RAYCASTING_DIR	= raycasting
+INPUTS_DIR		= inputs
 
 ERROR		= exit_msg.c
 CLEAN		= clean_mlx.c \
@@ -44,18 +45,21 @@ INIT		= init_structs.c \
 			init.c
 RAYCASTING	= raycaster.c \
 			draw_pixels.c
+INPUTS		= inputs.c \
 
 SRC_ERROR		= $(addprefix $(ERROR_DIR)/, $(ERROR))
 SRC_CLEAN		= $(addprefix $(CLEAN_DIR)/, $(CLEAN))
 SRC_INIT		= $(addprefix $(INIT_DIR)/, $(INIT))
 SRC_RAYCASTING	= $(addprefix $(RAYCASTING_DIR)/, $(RAYCASTING))
+SRC_INPUTS		= $(addprefix $(INPUTS_DIR)/, $(INPUTS))
 
 _SRC	= main.c \
 		start.c \
 		$(SRC_ERROR) \
 		$(SRC_CLEAN) \
 		$(SRC_INIT) \
-		$(SRC_RAYCASTING)
+		$(SRC_RAYCASTING) \
+		$(SRC_INPUTS)
 
 SRC		= $(addprefix $(SRC_DIR)/, $(_SRC))
 OBJ		= $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)

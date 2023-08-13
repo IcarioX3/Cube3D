@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:47:01 by icario            #+#    #+#             */
-/*   Updated: 2023/07/25 14:51:57 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/13 18:37:28 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	start(t_game *game)
 	create_floor_and_ceiling(game);
 	raycaster(game);
 	mlx_put_image_to_window(game->mlx.ptr, game->mlx.win, game->mlx.img, 0, 0);
+	mlx_key_hook(game->mlx.win, inputs, game);
 	mlx_hook(game->mlx.win, 17, 0, terminate, game);
 	mlx_loop(game->mlx.ptr);
 }

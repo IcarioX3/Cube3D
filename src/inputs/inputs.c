@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   inputs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/08/13 19:01:26 by antoine          ###   ########.fr       */
+/*   Created: 2023/08/13 18:34:26 by antoine           #+#    #+#             */
+/*   Updated: 2023/08/13 19:15:49 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3D.h"
 
-int	main(void)
+int	inputs(int key, t_game *game)
 {
-	t_game	game;
-
-	init(&game);
-	start(&game);
+	if (key == 65307)
+		terminate(game);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/08/07 12:40:59 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/13 18:58:23 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@
 # define CAMERA_PLANE_X 0
 # define CAMERA_PLANE_Y 0.9
 # define TITLE "CUBE3D"
+# define MOVE_SPEED 0.1
 
 # define BLUE_SKY 0x87CEEB
 # define GREEN_GRASS 0x00FF00
-
-# define MAP 
 
 //STRUCTS
 
@@ -83,6 +82,7 @@ typedef struct s_game
 	t_raycaster	raycaster;
 	int			floor_color;
 	int			ceiling_color;
+	int			map[10][10];
 }t_game;
 
 //PROTOTYPES
@@ -109,5 +109,7 @@ void	init_game(t_game *game);
 //RAYCASTER
 void	raycaster(t_game *game);
 void	draw_pixels(t_game *game, int x);
+//INPUTS
+int		inputs(int key, t_game *game);
 
 #endif

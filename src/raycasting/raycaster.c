@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 12:42:36 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/07 12:46:41 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/13 19:06:27 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	init_y_wall_detection(t_game *game)
 	}
 }
 
-void	dda(t_game *game, int map[10][10])
+void	dda(t_game *game)
 {
 	while (game->raycaster.hit == 0)
 	{
@@ -84,7 +84,7 @@ void	dda(t_game *game, int map[10][10])
 			game->player.map_y += game->raycaster.step_y;
 			game->raycaster.side = 1;
 		}
-		if (map[game->player.map_x][game->player.map_y] > 0)
+		if (game->map[game->player.map_x][game->player.map_y] > 0)
 			game->raycaster.hit = 1;
 	}
 	if (game->raycaster.side == 0)
@@ -97,18 +97,6 @@ void	dda(t_game *game, int map[10][10])
 
 void	raycaster(t_game *game)
 {
-	int	map[10][10] = {
-	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-	{1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
-	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-	{1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
-	{1, 0, 1, 0, 0, 0, 0, 0, 1, 1},
-	{1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
-	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-	{1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
-	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-	};
 	int	x;
 
 	x = 0;
@@ -117,7 +105,7 @@ void	raycaster(t_game *game)
 		init_value(game, x);
 		init_x_wall_detection(game);
 		init_y_wall_detection(game);
-		dda(game, map);
+		dda(game);
 		draw_pixels(game, x);
 		x++;
 	}

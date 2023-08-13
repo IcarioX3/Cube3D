@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:26:52 by antoine           #+#    #+#             */
-/*   Updated: 2023/07/23 11:02:11 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/13 19:16:13 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,17 @@ void	init_game(t_game *game)
 {
 	init_camera(&game->camera);
 	init_player(&game->player);
+
+	//Map is a 2D array of int
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			if (i == 0 || i == 9 || j == 0 || j == 9)
+				game->map[i][j] = 1;
+			else
+				game->map[i][j] = 0;
+		}
+	}
+	game->map[5][5] = 1;
 }
