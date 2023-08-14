@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/08/14 21:15:43 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/14 22:00:24 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@
 
 # define BLUE_SKY 0x87CEEB
 # define GREEN_GRASS 0x00FF00
+
+# define ESCAPE_KEY 65307
+# define W_KEY 119
+# define A_KEY 97
+# define S_KEY 115
+# define D_KEY 100
+# define LEFT_ARROW 65361
+# define RIGHT_ARROW 65363
 
 //STRUCTS
 
@@ -113,5 +121,7 @@ void	draw_pixels(t_game *game, int x);
 void	create_floor_and_ceiling(t_game *game);
 //INPUTS
 int		inputs(int key, t_game *game);
+void	movements(t_game *game, int key);
+void	rotate(t_game *game, int key);
 
 #endif
