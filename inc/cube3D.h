@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/08/14 18:58:11 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/14 21:15:43 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 # define WIDTH 1920
 # define HEIGHT 1080
 # define CAMERA_PLANE_X 0
-# define CAMERA_PLANE_Y 0.66
+# define CAMERA_PLANE_Y 0.8
 # define TITLE "CUBE3D"
-# define MOVE_SPEED 0.1
-# define ROT_SPEED 0.1
+# define MOVE_SPEED 0.08
+# define ROT_SPEED 0.04
 
 # define BLUE_SKY 0x87CEEB
 # define GREEN_GRASS 0x00FF00

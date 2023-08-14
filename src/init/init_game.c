@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:26:52 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/14 18:59:20 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/14 21:05:19 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	init_camera(t_camera *camera)
 
 void	init_player(t_player *player)
 {
-	player->pos_x = 5;
-	player->pos_y = 5;
-	player->dir_x = 1;
-	player->dir_y = 1;
+	player->pos_x = 3;
+	player->pos_y = 3;
+	player->dir_x = -1;
+	player->dir_y = 0;
 }
 
 void	init_game(t_game *game)
