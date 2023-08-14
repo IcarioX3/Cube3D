@@ -6,7 +6,7 @@
 #    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/13 18:38:45 by antoine          ###   ########.fr        #
+#    Updated: 2023/08/14 18:52:19 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ INIT		= init_structs.c \
 			init_game.c \
 			init.c
 RAYCASTING	= raycaster.c \
-			draw_pixels.c
+			draw_pixels.c \
+			floor_and_ceiling.c
 INPUTS		= inputs.c \
 
 SRC_ERROR		= $(addprefix $(ERROR_DIR)/, $(ERROR))

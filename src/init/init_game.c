@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:26:52 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/13 19:16:13 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/14 18:59:20 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@ void	init_camera(t_camera *camera)
 	camera->plane_y = CAMERA_PLANE_Y;
 }
 
-/*Pos x and pos y are the position of the player in the map
-Dir x and dir y are the direction of the player
-Map x and map y are the position of the player in the map*/
 void	init_player(t_player *player)
 {
-	player->pos_x = 4;
-	player->pos_y = 4;
+	player->pos_x = 5;
+	player->pos_y = 5;
 	player->dir_x = 1;
 	player->dir_y = 1;
 }
@@ -34,8 +31,6 @@ void	init_game(t_game *game)
 {
 	init_camera(&game->camera);
 	init_player(&game->player);
-
-	//Map is a 2D array of int
 	for (int i = 0; i < 10; i++)
 	{
 		for (int j = 0; j < 10; j++)
