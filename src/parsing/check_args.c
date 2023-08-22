@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_double_tab.c                                  :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 08:52:51 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/22 10:31:41 by frgojard         ###   ########.fr       */
+/*   Created: 2023/08/22 09:02:07 by frgojard          #+#    #+#             */
+/*   Updated: 2023/08/22 14:01:58 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 
-void	free_double_tab(char **args)
+int	check_args(char *av)
 {
-	int	size;
-	int	i;
+	size_t	len;
 
-	i = 0;
-	size = 0;
-	if (args == NULL)
-		return ;
-	while (args[size])
-		size++;
-	while (i < size)
-		free(args[i++]);
-	free(args);
+	len = strlen(av);
+	if (len < 4 || strcmp(av + len - 4, ".cub") != 0)
+		return (write(2, "Error: File must have extension\".cub\"\n", 38), 1);
+	return (0);
 }

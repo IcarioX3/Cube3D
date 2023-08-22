@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: franck <franck@student.42.fr>              +#+  +:+       +#+         #
+#    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/07/20 02:20:35 by franck           ###   ########.fr        #
+#    Updated: 2023/08/22 09:04:27 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,11 @@ PARSING	= free_double_tab.c \
 			parsing.c \
 			split_file_map.c \
 			check_map.c \
+			check_map_info.c \
+			check_digit_info.c \
+			check_texture.c \
+			check_args.c \
+			fill.c \
 
 SRC_PARSING	= $(addprefix $(PARSING_DIR)/, $(PARSING))
 
