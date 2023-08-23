@@ -21,7 +21,8 @@ NAME 		= cube3D
 LIBNAME 	= libft.a
 CC 			= gcc
 CFLAGS		= -Wall -Werror -Wextra -g3
-#MLXFLAGS	= -L mlx -lm -lmlx -lXext -lX11
+MLXFLAGS	= -L mlx -lm -lmlx -lXext -lX11
+
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -29,8 +30,27 @@ INC_DIR = inc
 LIB_DIR = libft
 MLX_DIR = mlx
 
+ERROR_DIR		= error
+CLEAN_DIR		= clean
+INIT_DIR		= init
+RAYCASTING_DIR	= raycasting
+INPUTS_DIR		= inputs
 PARSING_DIR	= parsing
 
+ERROR		= exit_msg.c
+CLEAN		= clean_mlx.c \
+			clean_img.c \
+			terminate.c
+INIT		= init_structs.c \
+			init_mlx.c \
+			init_game.c \
+			init.c
+RAYCASTING	= raycaster.c \
+			draw_pixels.c \
+			floor_and_ceiling.c
+INPUTS		= inputs.c \
+			movements.c \
+			rotate.c
 PARSING	= free_double_tab.c \
 			get_map.c \
 			parsing.c \
@@ -42,10 +62,21 @@ PARSING	= free_double_tab.c \
 			check_args.c \
 			fill.c \
 
+SRC_ERROR		= $(addprefix $(ERROR_DIR)/, $(ERROR))
+SRC_CLEAN		= $(addprefix $(CLEAN_DIR)/, $(CLEAN))
+SRC_INIT		= $(addprefix $(INIT_DIR)/, $(INIT))
+SRC_RAYCASTING	= $(addprefix $(RAYCASTING_DIR)/, $(RAYCASTING))
+SRC_INPUTS		= $(addprefix $(INPUTS_DIR)/, $(INPUTS))
 SRC_PARSING	= $(addprefix $(PARSING_DIR)/, $(PARSING))
 
 _SRC	= main.c \
-		$(SRC_PARSING) \
+		start.c \
+		$(SRC_ERROR) \
+		$(SRC_CLEAN) \
+		$(SRC_INIT) \
+		$(SRC_RAYCASTING) \
+    $(SRC_PARSING) \
+		$(SRC_INPUTS)
 
 SRC		= $(addprefix $(SRC_DIR)/, $(_SRC))
 OBJ		= $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)

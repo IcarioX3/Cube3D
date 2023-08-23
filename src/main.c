@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/08/23 12:04:42 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/13 19:01:26 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	main(int ac, char **av)
 {
-	int		fd;
+  int		fd;
 	t_vars	*vars;
+  t_game	game;
 
 	if (ac != 2)
 		return (write (2, "Error : Wrong input\n", 21), 1);	
@@ -53,5 +54,9 @@ int	main(int ac, char **av)
 		free(vars->ceiling_info);
 	free(vars);
 	close(fd);
+
+	init(&game);
+	start(&game);
+
 	return (0);
 }
