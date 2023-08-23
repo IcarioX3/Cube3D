@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:52:38 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/22 11:24:59 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/23 10:43:22 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ typedef struct s_vars
 	char	player;
 }	t_vars;
 
+typedef struct s_info
+{
+	int	no;
+	int	so;
+	int	we;
+	int	ea;
+	int	f;
+	int	c;
+}	t_info;
 
 void	free_double_tab(char **args);
 char	*get_map(int fd);
