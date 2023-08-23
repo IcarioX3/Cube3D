@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2023/08/23 18:50:47 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/23 19:34:18 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 //DEFINES
 
 # define TITLE "CUBE3D"
-# define WIDTH 1920
-# define HEIGHT 1080
+# define WIDTH 960
+# define HEIGHT 540
 # define CAMERA_PLANE_X 0
 # define CAMERA_PLANE_Y 0.8
 # define MOVE_SPEED 0.08
@@ -115,14 +115,14 @@ typedef struct s_game
 	t_camera	camera;
 	t_raycaster	raycaster;
 	t_tex		textures[4];
+	t_vars		vars;
 	int			floor_color;
 	int			ceiling_color;
-	int			map[10][10];
 }t_game;
 
 //PROTOTYPES
 
-void	start(t_game *game, t_vars *vars);
+void	start(t_game *game);
 void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 
 //CLEAN
@@ -144,12 +144,12 @@ void	init_tex_struct(t_game *game);
 void	init_game(t_game *game, t_vars *vars);
 void	init_textures(t_game *game);
 //RAYCASTER
-void	raycaster(t_game *game, t_vars *vars);
+void	raycaster(t_game *game);
 void	draw_pixels(t_game *game, int x);
 void	create_floor_and_ceiling(t_game *game);
 //INPUTS
-int		inputs(int key, t_game *game, t_vars *vars);
-void	movements(t_game *game, int key, t_vars *vars);
+int		inputs(int key, t_game *game);
+void	movements(t_game *game, int key);
 void	rotate(t_game *game, int key);
 
 #endif
