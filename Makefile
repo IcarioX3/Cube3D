@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
+#    By: franck <franck@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/23 18:56:31 by icario           ###   ########.fr        #
+#    Updated: 2023/08/23 22:49:46 by franck           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,12 +72,12 @@ SRC_INPUTS		= $(addprefix $(INPUTS_DIR)/, $(INPUTS))
 SRC_PARSING	= $(addprefix $(PARSING_DIR)/, $(PARSING))
 
 _SRC	= main.c \
+    $(SRC_PARSING) \
 		start.c \
 		$(SRC_ERROR) \
 		$(SRC_CLEAN) \
 		$(SRC_INIT) \
 		$(SRC_RAYCASTING) \
-    $(SRC_PARSING) \
 		$(SRC_INPUTS)
 
 SRC		= $(addprefix $(SRC_DIR)/, $(_SRC))

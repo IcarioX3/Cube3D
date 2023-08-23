@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/08/23 19:16:47 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/23 22:48:53 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,25 @@ int	main(int ac, char **av)
 	}
 	(vars)->ceiling_info = NULL;
     (vars)->floor_info = NULL;
+	vars->file_texture = NULL;
 	parsing(&vars);
+	int a = 0;
+	while (a < 4)
+	{
+		printf ("%s\n", vars->file_texture[a]);
+		a++;
+	}
  	init(&game, vars);
 	start(&game);
 
 	//A mettre dans terminate
+	int a = 0;
+	while (a < 4)
+	{
+		free(vars->file_texture[a]);
+		a++;
+	}
+	free(vars->file_texture);
 	free(vars->mapline);
 	free_double_tab(vars->map);
 	free_double_tab(vars->map_info);

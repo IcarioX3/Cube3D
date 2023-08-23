@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:52:38 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/23 13:47:47 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/08/23 20:59:11 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ typedef struct s_vars
 	char	*floor_info;
 	char	*ceiling_info;
 	char	*mapline;
+	char	**file_texture;
 	int		longest_line;
+	int		floor[3];
+	int		ceiling[3];
 	int		begin_x;
 	int		begin_y;
 	char	player; //ajouter les couleur de c et f dans un tab de int statique si possible et un char ** des fichier de texture dans cette ordre Nord sud est ouest

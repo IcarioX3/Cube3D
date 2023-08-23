@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_texture.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 09:00:38 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/22 14:02:36 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/23 22:47:42 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,63 @@ int	check_cf_info(char *ceiling)
 	return (0);
 }
 
+char *init_texture_var(char *info)
+{
+	char *str = NULL;
+	int i = 0;
+	int len;
+	while (info[i] != ' ')
+		i++;
+	while (info[i] == ' ')
+		i++;
+	if (info[i] == '.' && info[i + 1] == '/')
+	{
+		len = i;
+		while (info[len] != ' ' && info[len])
+			len++;
+		len = len - i;
+		str = ft_substr(info, i, len);
+	}
+	else
+		return (NULL);
+	return (str);
+}
+
+
+int	check_file_texture(char **map_info, t_vars **vars)
+{
+	int i;
+	int j = 0;
+	i = 0;
+	while (i < 6)
+	{
+		if (strncmp(map_info[i], "NO ", 3) == 0)
+		{
+			(*vars)->file_texture[j] = init_texture_var(map_info[i]);
+			j++;
+
+		}
+		else if (strncmp(map_info[i], "SO ", 3) == 0)
+		{
+			(*vars)->file_texture[j] = init_texture_var(map_info[i]);
+			j++;
+		}
+		else if (strncmp(map_info[i], "WE ", 3) == 0)
+		{
+			(*vars)->file_texture[j] = init_texture_var(map_info[i]);
+			j++;
+		}		
+		else if (strncmp(map_info[i], "EA ", 3) == 0)
+		{
+			(*vars)->file_texture[j] = init_texture_var(map_info[i]);
+			j++;
+		}
+		i++;
+	}
+
+	return (0);
+}
+
 int	check_texture(t_vars **vars)
 {
 	if (init_texture_info(vars) == 1)
@@ -82,6 +139,10 @@ int	check_texture(t_vars **vars)
 	if (check_cf_info((*vars)->ceiling_info) == 1)
 		return (1);
 	if (check_texture_overflow(vars) == 1)
+		return (1);
+	(*vars)->file_texture = NULL;
+	(*vars)->file_texture = malloc(4 * sizeof(char *));
+	if (check_file_texture((*vars)->map_info, vars) == 1)
 		return (1);
 	return (0);
 }
