@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3D.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/08/14 22:00:24 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/23 14:11:14 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include "mlx.h"
+# include "parsing.h"
 # include <math.h>
 
 //DEFINES
@@ -96,7 +97,7 @@ typedef struct s_game
 
 //PROTOTYPES
 
-void	start(t_game *game);
+void	start(t_game *game, t_vars *vars);
 void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 
 //CLEAN
@@ -107,21 +108,21 @@ int		terminate(t_game *game);
 //ERROR
 void	exit_msg(char *msg, t_game *game);
 //INIT
-void	init(t_game *game);
+void	init(t_game *game, t_vars *vars);
 void	init_mlx_struct(t_mlx *mlx);
 void	init_game_struct(t_game *game);
 void	init_player_struct(t_player *player);
 void	init_camera_struct(t_camera *camera);
 void	init_raycaster_struct(t_raycaster *raycaster);
 void	init_mlx(t_game *game);
-void	init_game(t_game *game);
+void	init_game(t_game *game, t_vars *vars);
 //RAYCASTER
-void	raycaster(t_game *game);
+void	raycaster(t_game *game, t_vars *vars);
 void	draw_pixels(t_game *game, int x);
 void	create_floor_and_ceiling(t_game *game);
 //INPUTS
-int		inputs(int key, t_game *game);
-void	movements(t_game *game, int key);
+int		inputs(int key, t_game *game, t_vars *vars);
+void	movements(t_game *game, int key, t_vars *vars);
 void	rotate(t_game *game, int key);
 
 #endif

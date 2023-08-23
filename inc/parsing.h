@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:52:38 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/23 12:00:14 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/23 13:47:47 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_vars
 	int		longest_line;
 	int		begin_x;
 	int		begin_y;
-	char	player; //ajouter les couleur de c et f dans un tab de int et un char ** des fichier de texture dans cette ordre Nord sud est ouest
+	char	player; //ajouter les couleur de c et f dans un tab de int statique si possible et un char ** des fichier de texture dans cette ordre Nord sud est ouest
 }	t_vars;
 
 typedef struct s_info

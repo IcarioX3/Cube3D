@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/08/13 19:01:26 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/23 14:20:36 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+#include "cube3D.h"
 
 int	main(int ac, char **av)
 {
-  int		fd;
+	int		fd;
 	t_vars	*vars;
-  t_game	game;
+	t_game	game;
 
+	(void)game;
 	if (ac != 2)
 		return (write (2, "Error : Wrong input\n", 21), 1);	
 	fd = open(av[1], O_RDONLY);
@@ -45,6 +47,11 @@ int	main(int ac, char **av)
 	(vars)->ceiling_info = NULL;
     (vars)->floor_info = NULL;
 	parsing(&vars);
+	printf("first line map: %s\n", vars->map[0]);
+ 	init(&game, vars);
+	start(&game, vars);
+
+	//A mettre dans terminate
 	free(vars->mapline);
 	free_double_tab(vars->map);
 	free_double_tab(vars->map_info);
@@ -55,8 +62,7 @@ int	main(int ac, char **av)
 	free(vars);
 	close(fd);
 
-	init(&game);
-	start(&game);
+
 
 	return (0);
 }

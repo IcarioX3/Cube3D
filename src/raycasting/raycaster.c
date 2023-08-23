@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   raycaster.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 12:42:36 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/14 18:51:25 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/23 14:27:38 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3D.h"
+#include "parsing.h"
 
 void	init_value(t_game *game, int x)
 {
@@ -68,7 +69,7 @@ void	init_y_wall_detection(t_game *game)
 	}
 }
 
-void	dda(t_game *game)
+void	dda(t_game *game, t_vars *vars)
 {
 	while (game->raycaster.hit == 0)
 	{
@@ -84,7 +85,7 @@ void	dda(t_game *game)
 			game->player.map_y += game->raycaster.step_y;
 			game->raycaster.side = 1;
 		}
-		if (game->map[game->player.map_x][game->player.map_y] > 0)
+		if (vars->map[game->player.map_x][game->player.map_y] == '1')
 			game->raycaster.hit = 1;
 	}
 	if (game->raycaster.side == 0)
@@ -95,7 +96,7 @@ void	dda(t_game *game)
 			- game->raycaster.delta_dist_y;
 }
 
-void	raycaster(t_game *game)
+void	raycaster(t_game *game, t_vars *vars)
 {
 	int	x;
 
@@ -106,7 +107,7 @@ void	raycaster(t_game *game)
 		init_value(game, x);
 		init_x_wall_detection(game);
 		init_y_wall_detection(game);
-		dda(game);
+		dda(game, vars);
 		draw_pixels(game, x);
 		x++;
 	}
