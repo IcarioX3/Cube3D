@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:56:04 by icario            #+#    #+#             */
-/*   Updated: 2022/05/16 14:46:34 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/07/17 17:38:38 by franckgojar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
-#include <bsd/string.h>
 #include <stdio.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)

@@ -6,11 +6,12 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:26:52 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/23 18:04:52 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/23 18:47:32 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3D.h"
+#include "parsing.h"
 
 //Plane x and plane y are the camera plane coordinates
 void	init_camera(t_camera *camera)
@@ -19,27 +20,16 @@ void	init_camera(t_camera *camera)
 	camera->plane_y = CAMERA_PLANE_Y;
 }
 
-void	init_player(t_player *player)
+void	init_player(t_player *player, t_vars *vars)
 {
-	player->pos_x = 3;
-	player->pos_y = 3;
+	player->pos_x = vars->begin_x;
+	player->pos_y = vars->begin_y;
 	player->dir_x = -1;
 	player->dir_y = 0;
 }
 
-void	init_game(t_game *game)
+void	init_game(t_game *game, t_vars *vars)
 {
 	init_camera(&game->camera);
-	init_player(&game->player);
-	for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j < 10; j++)
-		{
-			if (i == 0 || i == 9 || j == 0 || j == 9)
-				game->map[i][j] = 1;
-			else
-				game->map[i][j] = 0;
-		}
-	}
-	game->map[5][5] = 1;
+	init_player(&game->player, vars);
 }

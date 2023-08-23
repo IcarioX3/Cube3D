@@ -6,13 +6,14 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:07:48 by icario            #+#    #+#             */
-/*   Updated: 2023/08/23 18:04:42 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/23 18:47:50 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3D.h"
+#include "parsing.h"
 
-void	init(t_game *game)
+void	init(t_game *game, t_vars *vars)
 {
 	init_game_struct(game);
 	init_mlx_struct(&game->mlx);
@@ -21,6 +22,6 @@ void	init(t_game *game)
 	init_raycaster_struct(&game->raycaster);
 	init_tex_struct(game);
 	init_mlx(game);
-	init_game(game);
+	init_game(game, vars);
 	init_textures(game);
 }

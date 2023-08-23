@@ -6,7 +6,7 @@
 #    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/22 16:39:37 by icario           ###   ########.fr        #
+#    Updated: 2023/08/23 18:53:25 by icario           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ CC 			= gcc
 CFLAGS		= -Wall -Werror -Wextra -g3
 MLXFLAGS	= -L mlx -lm -lmlx -lXext -lX11
 
+
 SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = inc
@@ -34,16 +35,15 @@ CLEAN_DIR		= clean
 INIT_DIR		= init
 RAYCASTING_DIR	= raycasting
 INPUTS_DIR		= inputs
+PARSING_DIR	= parsing
 
 ERROR		= exit_msg.c
 CLEAN		= clean_mlx.c \
 			clean_img.c \
 			terminate.c
 INIT		= init_structs.c \
-			init_structs2.c \
 			init_mlx.c \
 			init_game.c \
-			init_texs.c \
 			init.c
 RAYCASTING	= raycaster.c \
 			draw_pixels.c \
@@ -51,12 +51,23 @@ RAYCASTING	= raycaster.c \
 INPUTS		= inputs.c \
 			movements.c \
 			rotate.c
+PARSING	= free_double_tab.c \
+			get_map.c \
+			parsing.c \
+			split_file_map.c \
+			check_map.c \
+			check_map_info.c \
+			check_digit_info.c \
+			check_texture.c \
+			check_args.c \
+			fill.c \
 
 SRC_ERROR		= $(addprefix $(ERROR_DIR)/, $(ERROR))
 SRC_CLEAN		= $(addprefix $(CLEAN_DIR)/, $(CLEAN))
 SRC_INIT		= $(addprefix $(INIT_DIR)/, $(INIT))
 SRC_RAYCASTING	= $(addprefix $(RAYCASTING_DIR)/, $(RAYCASTING))
 SRC_INPUTS		= $(addprefix $(INPUTS_DIR)/, $(INPUTS))
+SRC_PARSING	= $(addprefix $(PARSING_DIR)/, $(PARSING))
 
 _SRC	= main.c \
 		start.c \
@@ -64,6 +75,7 @@ _SRC	= main.c \
 		$(SRC_CLEAN) \
 		$(SRC_INIT) \
 		$(SRC_RAYCASTING) \
+    $(SRC_PARSING) \
 		$(SRC_INPUTS)
 
 SRC		= $(addprefix $(SRC_DIR)/, $(_SRC))
