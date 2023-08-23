@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycaster.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 12:42:36 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/23 14:27:38 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/08/23 19:33:32 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	init_y_wall_detection(t_game *game)
 	}
 }
 
-void	dda(t_game *game, t_vars *vars)
+void	dda(t_game *game)
 {
 	while (game->raycaster.hit == 0)
 	{
@@ -85,7 +85,7 @@ void	dda(t_game *game, t_vars *vars)
 			game->player.map_y += game->raycaster.step_y;
 			game->raycaster.side = 1;
 		}
-		if (vars->map[game->player.map_x][game->player.map_y] == '1')
+		if (game->vars.map[game->player.map_x][game->player.map_y] == '1')
 			game->raycaster.hit = 1;
 	}
 	if (game->raycaster.side == 0)
@@ -96,7 +96,7 @@ void	dda(t_game *game, t_vars *vars)
 			- game->raycaster.delta_dist_y;
 }
 
-void	raycaster(t_game *game, t_vars *vars)
+void	raycaster(t_game *game)
 {
 	int	x;
 
@@ -107,7 +107,7 @@ void	raycaster(t_game *game, t_vars *vars)
 		init_value(game, x);
 		init_x_wall_detection(game);
 		init_y_wall_detection(game);
-		dda(game, vars);
+		dda(game);
 		draw_pixels(game, x);
 		x++;
 	}

@@ -3,12 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   cube3D.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 15:19:14 by icario            #+#    #+#             */
-/*   Updated: 2023/08/23 14:11:14 by ablevin          ###   ########.fr       */
+/*   Created: Invalid date        by                   #+#    #+#             */
+/*   Updated: 2023/08/23 19:34:18 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+
+
+
+
+
+
 
 #ifndef CUBE3D_H
 # define CUBE3D_H
@@ -20,16 +28,17 @@
 
 //DEFINES
 
-# define WIDTH 1920
-# define HEIGHT 1080
+# define TITLE "CUBE3D"
+# define WIDTH 960
+# define HEIGHT 540
 # define CAMERA_PLANE_X 0
 # define CAMERA_PLANE_Y 0.8
-# define TITLE "CUBE3D"
 # define MOVE_SPEED 0.08
 # define ROT_SPEED 0.04
 
 # define BLUE_SKY 0x87CEEB
 # define GREEN_GRASS 0x00FF00
+# define TEX_WIDTH 16
 
 # define ESCAPE_KEY 65307
 # define W_KEY 119
@@ -82,7 +91,22 @@ typedef struct s_raycaster
 	int		step_y;
 	int		hit;
 	int		side;
+	double	wall_x;
+	int		tex_x;
+	int		tex_y;
+	double	tex_pos;
+	double	step;
 }t_raycaster;
+
+typedef	struct s_tex
+{
+	char	*filename;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}t_tex;
 
 typedef struct s_game
 {
@@ -90,14 +114,15 @@ typedef struct s_game
 	t_player	player;
 	t_camera	camera;
 	t_raycaster	raycaster;
+	t_tex		textures[4];
+	t_vars		vars;
 	int			floor_color;
 	int			ceiling_color;
-	int			map[10][10];
 }t_game;
 
 //PROTOTYPES
 
-void	start(t_game *game, t_vars *vars);
+void	start(t_game *game);
 void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 
 //CLEAN
@@ -115,14 +140,16 @@ void	init_player_struct(t_player *player);
 void	init_camera_struct(t_camera *camera);
 void	init_raycaster_struct(t_raycaster *raycaster);
 void	init_mlx(t_game *game);
+void	init_tex_struct(t_game *game);
 void	init_game(t_game *game, t_vars *vars);
+void	init_textures(t_game *game);
 //RAYCASTER
-void	raycaster(t_game *game, t_vars *vars);
+void	raycaster(t_game *game);
 void	draw_pixels(t_game *game, int x);
 void	create_floor_and_ceiling(t_game *game);
 //INPUTS
-int		inputs(int key, t_game *game, t_vars *vars);
-void	movements(t_game *game, int key, t_vars *vars);
+int		inputs(int key, t_game *game);
+void	movements(t_game *game, int key);
 void	rotate(t_game *game, int key);
 
 #endif

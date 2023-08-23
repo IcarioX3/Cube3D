@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:05:17 by icario            #+#    #+#             */
-/*   Updated: 2023/07/21 12:06:28 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/23 16:57:14 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,9 @@ void	init_raycaster_struct(t_raycaster *raycaster)
 	raycaster->step_y = 0;
 	raycaster->hit = 0;
 	raycaster->side = 0;
+	raycaster->wall_x = 0;
+	raycaster->tex_x = 0;
+	raycaster->tex_y = 0;
+	raycaster->tex_pos = 0;
+	raycaster->step = 0;
 }

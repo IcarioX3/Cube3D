@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
+#    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/22 09:04:27 by frgojard         ###   ########.fr        #
+#    Updated: 2023/08/23 18:56:31 by icario           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,8 +42,10 @@ CLEAN		= clean_mlx.c \
 			clean_img.c \
 			terminate.c
 INIT		= init_structs.c \
+			init_structs2.c \
 			init_mlx.c \
 			init_game.c \
+			init_texs.c \
 			init.c
 RAYCASTING	= raycaster.c \
 			draw_pixels.c \

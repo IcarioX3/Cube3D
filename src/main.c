@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/08/23 14:20:36 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/08/23 19:16:47 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,8 @@ int	main(int ac, char **av)
 	(vars)->ceiling_info = NULL;
     (vars)->floor_info = NULL;
 	parsing(&vars);
-	printf("first line map: %s\n", vars->map[0]);
  	init(&game, vars);
-	start(&game, vars);
+	start(&game);
 
 	//A mettre dans terminate
 	free(vars->mapline);
