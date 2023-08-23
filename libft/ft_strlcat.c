@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:41:40 by icario            #+#    #+#             */
-/*   Updated: 2022/06/23 19:16:41 by icario           ###   ########.fr       */
+/*   Updated: 2023/07/17 17:38:23 by franckgojar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <bsd/string.h>
 #include <stdio.h>
 #include "libft.h"
 

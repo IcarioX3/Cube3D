@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablevin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:56:29 by ablevin           #+#    #+#             */
-/*   Updated: 2022/05/10 17:53:40 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/07/17 17:38:09 by franckgojar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <bsd/string.h>
 #include <stdio.h>
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)

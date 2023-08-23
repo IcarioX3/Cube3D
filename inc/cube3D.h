@@ -2,6 +2,5 @@
 # define CUBE3D_H
 
 #include "libft.h"
-#include "mlx.h"
 
 #endif
