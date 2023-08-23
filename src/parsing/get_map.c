@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:59:01 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/22 13:59:02 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/23 12:14:46 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*get_map(int fd)
 	{
 		mapgnl = get_next_line(fd);
 		if (mapgnl == NULL)
-			return (NULL);
+			return (write(2, "error: empty file\n", 19), NULL);
 		map = ft_strdup(mapgnl);
 		if (map == NULL)
 			return (free(mapgnl), NULL);
