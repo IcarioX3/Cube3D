@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start.c                                            :+:      :+:    :+:   */
+/*   init_texs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 14:47:01 by icario            #+#    #+#             */
-/*   Updated: 2023/08/22 16:56:20 by icario           ###   ########.fr       */
+/*   Created: 2023/08/22 16:14:03 by icario            #+#    #+#             */
+/*   Updated: 2023/08/23 18:08:12 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3D.h"
 
-void	start(t_game *game)
+void	init_textures(t_game *game)
 {
-	game->floor_color = GREEN_GRASS;
-	game->ceiling_color = BLUE_SKY;
-	create_floor_and_ceiling(game);
-	raycaster(game);
-	mlx_hook(game->mlx.win, 2, 1L << 0, inputs, game);
-	mlx_hook(game->mlx.win, 17, 0, terminate, game);
-	mlx_loop(game->mlx.ptr);
+	int	i;
+	
+	i = 0;
+	while (i < 4)
+	{
+		game->textures[i].img = mlx_xpm_file_to_image(game->mlx.ptr,
+				game->textures[i].filename, &game->textures[i].bits_per_pixel,
+				&game->textures[i].line_length);
+		game->textures[i].addr = mlx_get_data_addr(game->textures[i].img,
+				&game->textures[i].bits_per_pixel, &game->textures[i].line_length,
+				&game->textures[i].endian);
+		i++;
+	}
 }

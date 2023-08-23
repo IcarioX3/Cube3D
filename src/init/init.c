@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:07:48 by icario            #+#    #+#             */
-/*   Updated: 2023/08/07 12:42:25 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/23 18:04:42 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	init(t_game *game)
 	init_player_struct(&game->player);
 	init_camera_struct(&game->camera);
 	init_raycaster_struct(&game->raycaster);
+	init_tex_struct(game);
 	init_mlx(game);
 	init_game(game);
+	init_textures(game);
 }
