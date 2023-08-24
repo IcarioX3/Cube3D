@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:05:17 by icario            #+#    #+#             */
-/*   Updated: 2023/08/24 11:47:06 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/24 12:01:11 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	init_player_struct(t_player *player)
 {
 	player->pos_x = 0;
 	player->pos_y = 0;
-	player->dir_x = 0;
+	player->dir_x = 1;
 	player->dir_y = 0;
 	player->map_x = 0;
 	player->map_y = 0;

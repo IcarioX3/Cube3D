@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2023/08/24 10:52:21 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/24 12:07:45 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@
 # define TITLE "CUBE3D"
 # define WIDTH 960
 # define HEIGHT 540
-# define CAMERA_PLANE_X 0
-# define CAMERA_PLANE_Y 0.8
 # define MOVE_SPEED 0.08
 # define ROT_SPEED 0.04
 
