@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 18:49:06 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/24 10:13:23 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/24 10:56:38 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	create_floor_and_ceiling(t_game *game)
 		x = 0;
 		while (x < WIDTH)
 		{
-			my_mlx_pixel_put(&game->mlx, x, y, rgb_to_int(game->vars.ceiling));
+			my_mlx_pixel_put(&game->mlx, x, y, rgb_to_int(game->vars->ceiling));
 			x++;
 		}
 		y++;
@@ -44,7 +44,7 @@ void	create_floor_and_ceiling(t_game *game)
 		x = 0;
 		while (x < WIDTH)
 		{
-			my_mlx_pixel_put(&game->mlx, x, y, rgb_to_int(game->vars.floor));
+			my_mlx_pixel_put(&game->mlx, x, y, rgb_to_int(game->vars->floor));
 			x++;
 		}
 		y++;

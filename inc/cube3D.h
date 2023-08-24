@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3D.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2023/08/23 22:50:03 by franck           ###   ########.fr       */
+/*   Updated: 2023/08/24 10:52:21 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ typedef struct s_game
 	t_camera	camera;
 	t_raycaster	raycaster;
 	t_tex		textures[4];
-	t_vars		vars;
+	t_vars		*vars;
 	int			floor_color;
 	int			ceiling_color;
 }t_game;
@@ -120,6 +120,7 @@ void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 //CLEAN
 void	clean_mlx(t_game *game);
 void	clean_img(t_game *game);
+void	clean_parsing(t_game *game);
 int		terminate(t_game *game);
 
 //ERROR
