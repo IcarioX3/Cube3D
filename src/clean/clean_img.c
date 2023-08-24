@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:43:23 by icario            #+#    #+#             */
-/*   Updated: 2023/08/24 10:47:49 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/24 11:33:26 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	clean_img(t_game *game)
 	i = 0;
 	while (i < 4)
 	{
-		if (game->textures[i].img)
+		if (game->textures[i].img != NULL && &game->textures[i].img)
 		{
 			mlx_destroy_image(game->mlx.ptr, game->textures[i].img);
 		}

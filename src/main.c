@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/08/24 10:36:50 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/24 11:18:34 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	main(int ac, char **av)
 	parsing(&vars);
 	close(fd);
 
-	printf("first texture: %s\n", vars->file_texture[0]);
  	init(&game, vars);
 	start(&game);
 	return (0);

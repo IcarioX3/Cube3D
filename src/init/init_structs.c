@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:05:17 by icario            #+#    #+#             */
-/*   Updated: 2023/08/23 16:57:14 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/24 11:47:06 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 
 void	init_game_struct(t_game *game)
 {
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		game->textures[i].img = NULL;
+		game->textures[i].addr = NULL;
+		game->textures[i].bits_per_pixel = 0;
+		game->textures[i].line_length = 0;
+		game->textures[i].endian = 0;
+		i++;
+	}
 	game->ceiling_color = 0;
 	game->floor_color = 0;
 }

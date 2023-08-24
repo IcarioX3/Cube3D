@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:07:48 by icario            #+#    #+#             */
-/*   Updated: 2023/08/23 18:47:50 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/24 11:25:05 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void	init(t_game *game, t_vars *vars)
 {
+	game->vars = vars;
 	init_game_struct(game);
 	init_mlx_struct(&game->mlx);
 	init_player_struct(&game->player);

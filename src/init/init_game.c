@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:26:52 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/24 10:55:44 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/24 11:24:30 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	init_player(t_player *player, t_vars *vars)
 
 void	init_game(t_game *game, t_vars *vars)
 {
-	game->vars = vars;
 	init_camera(&game->camera);
 	init_player(&game->player, vars);
 }
