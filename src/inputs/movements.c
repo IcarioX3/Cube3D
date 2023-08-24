@@ -15,40 +15,40 @@
 
 void	move_forward(t_game *game)
 {
- 	if (game->vars.map[(int)(game->player.pos_x + game->player.dir_x
+ 	if (game->vars->map[(int)(game->player.pos_x + game->player.dir_x
 			* MOVE_SPEED)][(int)game->player.pos_y] == '0')
 		game->player.pos_x += game->player.dir_x * MOVE_SPEED;
-	if (game->vars.map[(int)game->player.pos_x][(int)(game->player.pos_y
+	if (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
 		+ game->player.dir_y * MOVE_SPEED)] == '0')
 		game->player.pos_y += game->player.dir_y * MOVE_SPEED;
 }
 
 void	move_backward(t_game *game)
 {
-	if (game->vars.map[(int)(game->player.pos_x - game->player.dir_x
+	if (game->vars->map[(int)(game->player.pos_x - game->player.dir_x
 			* MOVE_SPEED)][(int)game->player.pos_y] == '0')
 		game->player.pos_x -= game->player.dir_x * MOVE_SPEED;
-	if (game->vars.map[(int)game->player.pos_x][(int)(game->player.pos_y
+	if (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
 		- game->player.dir_y * MOVE_SPEED)] == '0')
 		game->player.pos_y -= game->player.dir_y * MOVE_SPEED;
 }
 
 void	move_right(t_game *game)
 {
-	if (game->vars.map[(int)(game->player.pos_x + game->player.dir_y
+	if (game->vars->map[(int)(game->player.pos_x + game->player.dir_y
 			* MOVE_SPEED)][(int)game->player.pos_y] == '0')
 		game->player.pos_x += game->player.dir_y * MOVE_SPEED;
-	if (game->vars.map[(int)game->player.pos_x][(int)(game->player.pos_y
+	if (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
 		- game->player.dir_x * MOVE_SPEED)] == '0')
 		game->player.pos_y -= game->player.dir_x * MOVE_SPEED;
 }
 
 void	move_left(t_game *game)
 {
-	if (game->vars.map[(int)(game->player.pos_x - game->player.dir_y
+	if (game->vars->map[(int)(game->player.pos_x - game->player.dir_y
 			* MOVE_SPEED)][(int)game->player.pos_y] == '0')
 		game->player.pos_x -= game->player.dir_y * MOVE_SPEED;
-	if (game->vars.map[(int)game->player.pos_x][(int)(game->player.pos_y
+	if (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
 		+ game->player.dir_x * MOVE_SPEED)] == '0')
 		game->player.pos_y += game->player.dir_x * MOVE_SPEED;
 }

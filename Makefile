@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: franck <franck@student.42.fr>              +#+  +:+       +#+         #
+#    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/23 22:49:46 by franck           ###   ########.fr        #
+#    Updated: 2023/08/24 10:34:13 by icario           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ PARSING_DIR	= parsing
 ERROR		= exit_msg.c
 CLEAN		= clean_mlx.c \
 			clean_img.c \
+			clean_parsing.c \
 			terminate.c
 INIT		= init_structs.c \
 			init_structs2.c \

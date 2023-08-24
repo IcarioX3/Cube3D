@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 12:42:36 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/23 19:33:32 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/24 10:56:11 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	dda(t_game *game)
 			game->player.map_y += game->raycaster.step_y;
 			game->raycaster.side = 1;
 		}
-		if (game->vars.map[game->player.map_x][game->player.map_y] == '1')
+		if (game->vars->map[game->player.map_x][game->player.map_y] == '1')
 			game->raycaster.hit = 1;
 	}
 	if (game->raycaster.side == 0)

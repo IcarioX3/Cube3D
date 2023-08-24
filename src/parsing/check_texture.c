@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_texture.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 09:00:38 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/23 22:47:42 by franck           ###   ########.fr       */
+/*   Updated: 2023/08/24 11:10:11 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char *init_texture_var(char *info)
 		i++;
 	while (info[i] == ' ')
 		i++;
-	if (info[i] == '.' && info[i + 1] == '/')
+	if (info[i] != '\0')
 	{
 		len = i;
 		while (info[len] != ' ' && info[len])

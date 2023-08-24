@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   floor_and_ceiling.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 18:49:06 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/14 18:50:17 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/24 10:56:38 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3D.h"
+
+int	rgb_to_int(int rgb[3])
+{
+	int	color;
+
+	color = 0;
+	color += rgb[0] * 256 * 256;
+	color += rgb[1] * 256;
+	color += rgb[2];
+	return (color);
+}
 
 void	create_floor_and_ceiling(t_game *game)
 {
@@ -23,7 +34,7 @@ void	create_floor_and_ceiling(t_game *game)
 		x = 0;
 		while (x < WIDTH)
 		{
-			my_mlx_pixel_put(&game->mlx, x, y, game->ceiling_color);
+			my_mlx_pixel_put(&game->mlx, x, y, rgb_to_int(game->vars->ceiling));
 			x++;
 		}
 		y++;
@@ -33,7 +44,7 @@ void	create_floor_and_ceiling(t_game *game)
 		x = 0;
 		while (x < WIDTH)
 		{
-			my_mlx_pixel_put(&game->mlx, x, y, game->floor_color);
+			my_mlx_pixel_put(&game->mlx, x, y, rgb_to_int(game->vars->floor));
 			x++;
 		}
 		y++;
