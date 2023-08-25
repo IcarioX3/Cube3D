@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean_img.c                                        :+:      :+:    :+:   */
+/*   clean_mlx_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 13:43:23 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 17:48:00 by icario           ###   ########.fr       */
+/*   Created: 2023/08/25 18:59:27 by icario            #+#    #+#             */
+/*   Updated: 2023/08/25 18:59:46 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include "cube3D_bonus.h"
 
-void	clean_img(t_game *game)
+void	clean_mlx(t_game *game)
 {
-	int	i;
-
-	i = 0;
-	while (i < 4)
+	if (game->mlx.ptr)
 	{
-		if (game->textures[i].img != NULL && &game->textures[i].img)
-		{
-			mlx_destroy_image(game->mlx.ptr, game->textures[i].img);
-		}
-		i++;
-	}
-	if (game->mlx.img)
-	{
-		mlx_destroy_image(game->mlx.ptr, game->mlx.img);
+		mlx_destroy_window(game->mlx.ptr, game->mlx.win);
+		mlx_destroy_display(game->mlx.ptr);
+		free(game->mlx.ptr);
 	}
 }

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean_img.c                                        :+:      :+:    :+:   */
+/*   free_double_tab_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 13:43:23 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 17:48:00 by icario           ###   ########.fr       */
+/*   Created: 2023/08/25 19:45:21 by icario            #+#    #+#             */
+/*   Updated: 2023/08/25 19:45:40 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include "parsing_bonus.h"
 
-void	clean_img(t_game *game)
+void	free_double_tab(char **args)
 {
+	int	size;
 	int	i;
 
 	i = 0;
-	while (i < 4)
-	{
-		if (game->textures[i].img != NULL && &game->textures[i].img)
-		{
-			mlx_destroy_image(game->mlx.ptr, game->textures[i].img);
-		}
-		i++;
-	}
-	if (game->mlx.img)
-	{
-		mlx_destroy_image(game->mlx.ptr, game->mlx.img);
-	}
+	size = 0;
+	if (args == NULL)
+		return ;
+	while (args[size])
+		size++;
+	while (i < size)
+		free(args[i++]);
+	free(args);
 }

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_game.c                                        :+:      :+:    :+:   */
+/*   init_game_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 11:26:52 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/25 16:35:23 by icario           ###   ########.fr       */
+/*   Created: 2023/08/25 19:03:24 by icario            #+#    #+#             */
+/*   Updated: 2023/08/25 19:04:09 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
-#include "parsing.h"
+#include "cube3D_bonus.h"
+#include "parsing_bonus.h"
 
 void	init_camera(t_game *game)
 {

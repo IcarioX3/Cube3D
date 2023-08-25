@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean_img.c                                        :+:      :+:    :+:   */
+/*   check_args_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 13:43:23 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 17:48:00 by icario           ###   ########.fr       */
+/*   Created: 2023/08/25 19:20:37 by icario            #+#    #+#             */
+/*   Updated: 2023/08/25 19:20:59 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include "parsing_bonus.h"
 
-void	clean_img(t_game *game)
+int	check_args(char *av)
 {
-	int	i;
+	size_t	len;
 
-	i = 0;
-	while (i < 4)
-	{
-		if (game->textures[i].img != NULL && &game->textures[i].img)
-		{
-			mlx_destroy_image(game->mlx.ptr, game->textures[i].img);
-		}
-		i++;
-	}
-	if (game->mlx.img)
-	{
-		mlx_destroy_image(game->mlx.ptr, game->mlx.img);
-	}
+	len = strlen(av);
+	if (len < 4 || strcmp(av + len - 4, ".cub") != 0)
+		return (write(2, "Error: File must have extension\".cub\"\n", 38), 1);
+	return (0);
 }

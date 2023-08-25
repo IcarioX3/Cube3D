@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:20:35 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 15:50:48 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/25 17:51:51 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 
 	(void)game;
 	if (ac != 2)
-		return (write (2, "Error : Wrong input\n", 21), 1);	
+		return (write(2, "Error : Wrong input\n", 21), 1);
 	if (check_args(av[1]) == 1)
 		return (1);
 	if (init_parsing(&vars, av, 0) == 1)

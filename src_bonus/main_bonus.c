@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean_img.c                                        :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 13:43:23 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 17:48:00 by icario           ###   ########.fr       */
+/*   Created: 2023/08/25 18:27:58 by icario            #+#    #+#             */
+/*   Updated: 2023/08/25 18:57:47 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include "cube3D_bonus.h"
+#include "parsing_bonus.h"
 
-void	clean_img(t_game *game)
+int	main(int ac, char **av)
 {
-	int	i;
+	t_vars	*vars;
+	t_game	game;
 
-	i = 0;
-	while (i < 4)
+	(void)game;
+	if (ac != 2)
+		return (write(2, "Error : Wrong input\n", 21), 1);
+	if (check_args(av[1]) == 1)
+		return (1);
+	if (init_parsing(&vars, av, 0) == 1)
+		return (1);
+	if (parsing(&vars) == 1)
 	{
-		if (game->textures[i].img != NULL && &game->textures[i].img)
-		{
-			mlx_destroy_image(game->mlx.ptr, game->textures[i].img);
-		}
-		i++;
+		clean_parsing1(&vars);
+		return (1);
 	}
-	if (game->mlx.img)
-	{
-		mlx_destroy_image(game->mlx.ptr, game->mlx.img);
-	}
+	init(&game, vars);
+	start(&game);
+	return (0);
 }
