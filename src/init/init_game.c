@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:26:52 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/24 12:15:16 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/25 16:35:23 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	init_player(t_player *player, t_vars *vars)
 		player->dir_y = -1;
 		player->dir_x = 0;
 	}
+	vars->map[vars->begin_x][vars->begin_y] = '0';
 }
 
 void	init_game(t_game *game, t_vars *vars)
