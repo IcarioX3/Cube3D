@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movements.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2'0'23/'0'8/14 21:35:2'0' by antoine           #+#    #+#             */
-/*   Updated: 2'0'23/'0'8/23 14:15:3'0' by ablevin          ###   ########.fr       */
+/*   Created: 2023/08/25 17:50:52 by icario            #+#    #+#             */
+/*   Updated: 2023/08/25 17:51:06 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	move_forward(t_game *game)
 {
- 	if (game->vars->map[(int)(game->player.pos_x + game->player.dir_x
+	if (game->vars->map[(int)(game->player.pos_x + game->player.dir_x
 			* MOVE_SPEED)][(int)game->player.pos_y] == '0')
 		game->player.pos_x += game->player.dir_x * MOVE_SPEED;
 	if (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y

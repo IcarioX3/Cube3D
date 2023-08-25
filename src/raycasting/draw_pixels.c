@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 18:46:06 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/23 17:46:15 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/25 18:03:15 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color)
 
 unsigned int	tex_pix_get(t_tex *tex, int x, int y)
 {
-	char 	*red;
-	char 	*green;
-	char 	*blue;
+	char	*red;
+	char	*green;
+	char	*blue;
 
 	red = tex->addr + (y * tex->line_length + x * (tex->bits_per_pixel / 8));
 	green = red + 1;
@@ -48,20 +48,10 @@ void	put_tex(t_game *game, int x, int y)
 				game->raycaster.tex_x, game->raycaster.tex_y));
 }
 
-void	draw_pixels(t_game *game, int x)
+void	put_pixel(t_game *game, int x, int draw_start, int draw_end)
 {
 	int	y;
-	int	line_height;
-	int	draw_start;
-	int	draw_end;
 
-	line_height = (int)(HEIGHT / game->raycaster.perp_wall_dist);
-	draw_start = -line_height / 2 + HEIGHT / 2;
-	if (draw_start < 0)
-		draw_start = 0;
-	draw_end = line_height / 2 + HEIGHT / 2;
-	if (draw_end >= HEIGHT)
-		draw_end = HEIGHT - 1;
 	y = draw_start;
 	if (game->raycaster.side == 0)
 		game->raycaster.wall_x = game->player.pos_y
@@ -75,9 +65,6 @@ void	draw_pixels(t_game *game, int x)
 		game->raycaster.tex_x = TEX_WIDTH - game->raycaster.tex_x - 1;
 	if (game->raycaster.side == 1 && game->raycaster.ray_dir_y < 0)
 		game->raycaster.tex_x = TEX_WIDTH - game->raycaster.tex_x - 1;
-	game->raycaster.step = 1.0 * TEX_WIDTH / line_height;
-	game->raycaster.tex_pos = (draw_start - HEIGHT / 2 + line_height / 2)
-		* game->raycaster.step;
 	while (y < draw_end)
 	{
 		game->raycaster.tex_y = (int)game->raycaster.tex_pos & (TEX_WIDTH - 1);
@@ -85,4 +72,23 @@ void	draw_pixels(t_game *game, int x)
 		put_tex(game, x, y);
 		y++;
 	}
+}
+
+void	draw_pixels(t_game *game, int x)
+{
+	int	line_height;
+	int	draw_start;
+	int	draw_end;
+
+	line_height = (int)(HEIGHT / game->raycaster.perp_wall_dist);
+	draw_start = -line_height / 2 + HEIGHT / 2;
+	if (draw_start < 0)
+		draw_start = 0;
+	draw_end = line_height / 2 + HEIGHT / 2;
+	if (draw_end >= HEIGHT)
+		draw_end = HEIGHT - 1;
+	game->raycaster.step = 1.0 * TEX_WIDTH / line_height;
+	game->raycaster.tex_pos = (draw_start - HEIGHT / 2 + line_height / 2)
+		* game->raycaster.step;
+	put_pixel(game, x, draw_start, draw_end);
 }

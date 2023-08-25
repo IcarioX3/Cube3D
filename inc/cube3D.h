@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3D.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2023/08/25 12:23:52 by frgojard         ###   ########.fr       */
+/*   Created: 2023/08/25 17:45:42 by icario            #+#    #+#             */
+/*   Updated: 2023/08/25 17:46:09 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ typedef struct s_raycaster
 	double	step;
 }t_raycaster;
 
-typedef	struct s_tex
+typedef struct s_tex
 {
 	char	*filename;
 	void	*img;

@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:14:03 by icario            #+#    #+#             */
-/*   Updated: 2023/08/24 11:50:00 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/25 17:50:17 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	init_textures(t_game *game)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < 4)
 	{
@@ -25,8 +25,8 @@ void	init_textures(t_game *game)
 		if (!game->textures[i].img)
 			exit_msg("Error\nCannot convert texture file into image\n", game);
 		game->textures[i].addr = mlx_get_data_addr(game->textures[i].img,
-				&game->textures[i].bits_per_pixel, &game->textures[i].line_length,
-				&game->textures[i].endian);
+				&game->textures[i].bits_per_pixel,
+				&game->textures[i].line_length, &game->textures[i].endian);
 		i++;
 	}
 }

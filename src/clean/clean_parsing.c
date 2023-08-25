@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:30:05 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 15:23:42 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/25 17:49:10 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	clean_parsing(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 4)
@@ -32,9 +32,10 @@ void	clean_parsing(t_game *game)
 		free(game->vars->ceiling_info);
 	free(game->vars);
 }
+
 void	clean_parsing1(t_vars **vars)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if ((*vars)->file_texture)
@@ -53,8 +54,8 @@ void	clean_parsing1(t_vars **vars)
 	if ((*vars)->map_info)
 		free_double_tab((*vars)->map_info);
 	if ((*vars)->floor_info)
-	 	free((*vars)->floor_info);
+		free((*vars)->floor_info);
 	if ((*vars)->ceiling_info)
-	 	free((*vars)->ceiling_info);
+		free((*vars)->ceiling_info);
 	free((*vars));
 }

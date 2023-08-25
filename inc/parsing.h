@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:52:38 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/25 15:44:38 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/25 17:46:21 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ int		check_args(char *av);
 int		fill(char **map);
 int		check_file_texture(char **map_info, t_vars **vars);
 void	clean_parsing1(t_vars **vars);
-int	init_parsing(t_vars **vars, char **av, int fd);
+int		init_parsing(t_vars **vars, char **av, int fd);
 
 #endif
