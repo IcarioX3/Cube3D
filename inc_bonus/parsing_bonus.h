@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.h                                          :+:      :+:    :+:   */
+/*   parsing_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 08:52:38 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/25 20:19:44 by icario           ###   ########.fr       */
+/*   Created: 2023/08/25 18:52:31 by icario            #+#    #+#             */
+/*   Updated: 2023/08/25 18:53:21 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSING_H
-# define PARSING_H
+#ifndef PARSING_BONUS_H
+# define PARSING_BONUS_H
 
 # include <stdio.h>
 # include <unistd.h>

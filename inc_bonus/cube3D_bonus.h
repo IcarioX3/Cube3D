@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cube3D.h                                           :+:      :+:    :+:   */
+/*   cube3D_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 17:45:42 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 18:34:54 by icario           ###   ########.fr       */
+/*   Created: 2023/08/25 18:28:51 by icario            #+#    #+#             */
+/*   Updated: 2023/08/25 18:55:20 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUBE3D_H
-# define CUBE3D_H
+#ifndef CUBE3D_BONUS_H
+# define CUBE3D_BONUS_H
 
 # include "libft.h"
 # include "mlx.h"
-# include "parsing.h"
+# include "parsing_bonus.h"
 # include <math.h>
 
 //DEFINES
 
 # define TITLE "CUBE3D"
-# define WIDTH 1920
-# define HEIGHT 1080 
+# define WIDTH 960
+# define HEIGHT 540
 # define MOVE_SPEED 0.08
 # define ROT_SPEED 0.04
 
