@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
+#    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/25 15:15:42 by frgojard         ###   ########.fr        #
+#    Updated: 2023/08/25 17:22:01 by icario           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,8 +94,10 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-		@echo "Baking $(LIB_DIR)"
+		@echo "Baking $(LIB_DIR)..."
 		@make -s -C $(LIB_DIR)
+		@echo "Baking $(MLX_DIR)..."
+		@make -s -C $(MLX_DIR)
 		@echo "$(GREEN)OK!$(END)"
 		@echo "Baking $(NAME)..."
 		@$(CC) -I$(INC_DIR) -I$(LIB_DIR) -o $@ $^ $(LIB_DIR)/$(LIBNAME) $(MLXFLAGS) -Imlx $(CFLAGS)
@@ -105,12 +107,14 @@ $(NAME): $(OBJ) $(HEADER)
 clean:
 		@echo "Removing objects..."
 		@make clean -s -C $(LIB_DIR)
+		@make clean -s -C $(MLX_DIR)
 		@rm -rf $(OBJ_DIR)
 		@echo "$(GREEN)Done!$(END)"
 		
 fclean: clean
 		@echo "Cleaning everything..."
 		@make fclean -s -C $(LIB_DIR)
+		@make clean -s -C $(MLX_DIR)
 		@rm -f $(NAME)
 		@echo "$(GREEN)Done!$(END)"
 		@echo "$(BLUE)Everything is clean!$(END)"
