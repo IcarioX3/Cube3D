@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:52:38 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/23 20:59:11 by franck           ###   ########.fr       */
+/*   Updated: 2023/08/25 15:44:38 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_vars
 	int		ceiling[3];
 	int		begin_x;
 	int		begin_y;
-	char	player; //ajouter les couleur de c et f dans un tab de int statique si possible et un char ** des fichier de texture dans cette ordre Nord sud est ouest
+	char	player;
 }	t_vars;
 
 typedef struct s_info
@@ -51,13 +51,16 @@ typedef struct s_info
 
 void	free_double_tab(char **args);
 char	*get_map(int fd);
-int parsing(t_vars **vars);
-int    split_file_map(t_vars **vars);
-int	check_map(t_vars **vars, char **map, int nb_player);
-int check_file(t_vars **vars, char **map);
-int check_texture_overflow(t_vars **vars);
-int check_texture(t_vars **vars);
-int check_args(char *av);
-int fill(char** map);
+int		parsing(t_vars **vars);
+int		split_file_map(t_vars **vars);
+int		check_map(t_vars **vars, char **map, int nb_player);
+int		check_file(t_vars **vars, char **map);
+int		check_texture_overflow(t_vars **vars);
+int		check_texture(t_vars **vars);
+int		check_args(char *av);
+int		fill(char **map);
+int		check_file_texture(char **map_info, t_vars **vars);
+void	clean_parsing1(t_vars **vars);
+int	init_parsing(t_vars **vars, char **av, int fd);
 
 #endif

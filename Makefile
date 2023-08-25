@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
+#    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/24 10:34:13 by icario           ###   ########.fr        #
+#    Updated: 2023/08/25 15:15:42 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ PARSING	= free_double_tab.c \
 			check_texture.c \
 			check_args.c \
 			fill.c \
+			check_file_texture.c \
 
 SRC_ERROR		= $(addprefix $(ERROR_DIR)/, $(ERROR))
 SRC_CLEAN		= $(addprefix $(CLEAN_DIR)/, $(CLEAN))

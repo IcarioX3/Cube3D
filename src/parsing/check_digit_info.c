@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_digit_info.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:55:55 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/23 20:17:25 by franck           ###   ########.fr       */
+/*   Updated: 2023/08/25 15:26:47 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,12 @@ int	remove_until_first_digit_floor(t_vars **vars, char *str)
 	return (0);
 }
 
-int	check_overflow(char *str, int info[])
+int	check_overflow(char *str, int info[], int i)
 {
 	char	**split;
-	int		i;
 	int		len;
 	int		tab[3];
 
-	i = -1;
 	len = -1;
 	split = NULL;
 	split = ft_split(str, ',');
@@ -106,9 +104,9 @@ int	check_texture_overflow(t_vars **vars)
 		return (1);
 	if (remove_until_first_digit_floor(vars, (*vars)->floor_info) == 1)
 		return (1);
-	if (check_overflow((*vars)->floor_info, (*vars)->floor) == 1)
+	if (check_overflow((*vars)->floor_info, (*vars)->floor, -1) == 1)
 		return (1);
-	if (check_overflow((*vars)->ceiling_info, (*vars)->ceiling) == 1)
+	if (check_overflow((*vars)->ceiling_info, (*vars)->ceiling, -1) == 1)
 		return (1);
 	return (0);
 }
