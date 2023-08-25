@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_texture.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 09:00:38 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/24 11:10:11 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/24 17:54:22 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,38 +95,41 @@ char *init_texture_var(char *info)
 	return (str);
 }
 
+int check_open_file(char **file_texture)
+{
+	int i;
+	int fd;
+
+	i = 0;
+	while (i < 4)
+	{
+		fd = open(file_texture[i], O_RDONLY);
+		if (fd < 0)
+			return (write(2, "error: can't open the texture file\n", 36), 1);
+		i++;
+	}
+	return (0);
+}
 
 int	check_file_texture(char **map_info, t_vars **vars)
 {
 	int i;
-	int j = 0;
+
 	i = 0;
 	while (i < 6)
 	{
 		if (strncmp(map_info[i], "NO ", 3) == 0)
-		{
-			(*vars)->file_texture[j] = init_texture_var(map_info[i]);
-			j++;
-
-		}
+			(*vars)->file_texture[0] = init_texture_var(map_info[i]);
 		else if (strncmp(map_info[i], "SO ", 3) == 0)
-		{
-			(*vars)->file_texture[j] = init_texture_var(map_info[i]);
-			j++;
-		}
+			(*vars)->file_texture[1] = init_texture_var(map_info[i]);
 		else if (strncmp(map_info[i], "WE ", 3) == 0)
-		{
-			(*vars)->file_texture[j] = init_texture_var(map_info[i]);
-			j++;
-		}		
+			(*vars)->file_texture[3] = init_texture_var(map_info[i]);	
 		else if (strncmp(map_info[i], "EA ", 3) == 0)
-		{
-			(*vars)->file_texture[j] = init_texture_var(map_info[i]);
-			j++;
-		}
+			(*vars)->file_texture[2] = init_texture_var(map_info[i]);
 		i++;
 	}
-
+	if (check_open_file((*vars)->file_texture) == 1)
+		return (1);
 	return (0);
 }
 
