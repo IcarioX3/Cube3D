@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:05:45 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 19:06:52 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/26 17:52:16 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	init_mlx_struct(t_mlx *mlx)
 /*Pos x and pos y are the position of the player in the map
 Dir x and dir y are the direction of the player
 Map x and map y are the position of the player in the map*/
+//Can move directions: 0 = up, 1 = down, 2 = left, 3 = right
 void	init_player_struct(t_player *player)
 {
 	player->pos_x = 0;
@@ -52,6 +53,11 @@ void	init_player_struct(t_player *player)
 	player->dir_y = 0;
 	player->map_x = 0;
 	player->map_y = 0;
+	player->can_move[0] = 0;
+	player->can_move[1] = 0;
+	player->can_move[2] = 0;
+	player->can_move[3] = 0;
+	player->can_rotate = 0;
 }
 
 /*Plane x and plane y are the camera plane coordinates

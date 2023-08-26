@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:50:25 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/14 22:00:45 by antoine          ###   ########.fr       */
+/*   Updated: 2023/08/26 18:09:54 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,4 @@ void	rotate_left(t_game *game)
 		- game->camera.plane_y * sin(ROT_SPEED);
 	game->camera.plane_y = old_plane_x * sin(ROT_SPEED)
 		+ game->camera.plane_y * cos(ROT_SPEED);
-}
-
-void	rotate(t_game *game, int key)
-{
-	if (key == RIGHT_ARROW)
-		rotate_right(game);
-	else if (key == LEFT_ARROW)
-		rotate_left(game);
 }

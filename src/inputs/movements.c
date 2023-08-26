@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 17:50:52 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 17:51:06 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/26 18:17:15 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,20 @@ void	move_left(t_game *game)
 		game->player.pos_y += game->player.dir_x * MOVE_SPEED;
 }
 
-void	movements(t_game *game, int key)
+int	movements(t_game *game, int key)
 {
-	if (key == W_KEY)
+	if (game->player.can_move[0])
 		move_forward(game);
-	if (key == S_KEY)
+	if (game->player.can_move[1])
 		move_backward(game);
-	if (key == D_KEY)
-		move_right(game);
-	if (key == A_KEY)
+	if (game->player.can_move[2])
 		move_left(game);
+	if (game->player.can_move[3])
+		move_right(game);
+	if (game->player.can_rotate == 1)
+		rotate_right(game);
+	else if (game->player.can_rotate == -1)
+		rotate_left(game);
+	raycaster(game);
+	return (key);
 }
