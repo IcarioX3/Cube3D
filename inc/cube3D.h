@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 17:45:42 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 18:34:54 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/26 18:20:22 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 //DEFINES
 
 # define TITLE "CUBE3D"
-# define WIDTH 1920
-# define HEIGHT 1080 
-# define MOVE_SPEED 0.08
-# define ROT_SPEED 0.04
+# define WIDTH 960
+# define HEIGHT 540 
+# define MOVE_SPEED 0.03
+# define ROT_SPEED 0.03
 
 # define BLUE_SKY 0x87CEEB
 # define GREEN_GRASS 0x00FF00
@@ -59,6 +59,8 @@ typedef struct s_player
 	double	dir_y;
 	int		map_x;
 	int		map_y;
+	int		can_move[4];
+	int		can_rotate;
 }t_player;
 
 typedef struct s_camera
@@ -140,7 +142,9 @@ void	draw_pixels(t_game *game, int x);
 void	create_floor_and_ceiling(t_game *game);
 //INPUTS
 int		inputs(int key, t_game *game);
-void	movements(t_game *game, int key);
-void	rotate(t_game *game, int key);
+int		key_released(int key, t_game *game);
+int		movements(t_game *game, int key);
+void	rotate_left(t_game *game);
+void	rotate_right(t_game *game);
 
 #endif
