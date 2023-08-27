@@ -6,7 +6,7 @@
 #    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/25 21:21:36 by icario           ###   ########.fr        #
+#    Updated: 2023/08/27 15:53:49 by icario           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,8 @@ OBJ		= $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 HEADER	= $(addprefix $(INC_DIR)/, $(NAME).h)
 
 #### Bonus ####
-_SRC_BONUS = $(_SRC:.c=_bonus.c)
+_SRC_BONUS = $(_SRC:.c=_bonus.c) \
+			$(RAYCASTING_DIR)/minimap_bonus.c \
 
 SRC_BONUS	= $(addprefix $(SRC_DIR)/, $(_SRC_BONUS))
 OBJ_BONUS	= $(SRC_BONUS:$(SRC_DIR)%.c=$(OBJ_DIR_BONUS)%.o)
