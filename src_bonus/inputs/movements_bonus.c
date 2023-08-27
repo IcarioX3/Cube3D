@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:18:31 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 14:41:14 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 15:59:27 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ int	movements(t_game *game)
 		rotate_left(game, ROT_SPEED);
 	mouse_move(game);
 	raycaster(game);
+	draw_minimap(game);
 	return (0);
 }

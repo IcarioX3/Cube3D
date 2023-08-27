@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:28:51 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 14:40:45 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 15:59:18 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,7 @@ void	init_textures(t_game *game);
 void	raycaster(t_game *game);
 void	draw_pixels(t_game *game, int x);
 void	create_floor_and_ceiling(t_game *game);
+void	draw_minimap(t_game *game);
 //INPUTS
 int		inputs(int key, t_game *game);
 void	mouse_move(t_game *game);
