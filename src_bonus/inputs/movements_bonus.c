@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:18:31 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 18:08:28 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 18:52:19 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,95 +14,74 @@
 
 void	move_forward(t_game *game)
 {
-	printf("case that is not working: %c\n", game->vars->map[(int)(game->player.pos_x + game->player.dir_x
-				* MOVE_SPEED * 2)][(int)game->player.pos_y]);
-	if (((game->vars->map[(int)(game->player.pos_x + game->player.dir_x
-				* MOVE_SPEED)][(int)game->player.pos_y] == '0'
+	if ((game->vars->map[(int)(game->player.pos_x + game->player.dir_x
+				* MOVE_SPEED * 4)][(int)game->player.pos_y] == '0'
 		&& game->vars->map[(int)(game->player.pos_x + game->player.dir_x
-			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '0')
+			* MOVE_SPEED * 4)][(int)game->player.pos_y] == '0')
 		|| (game->vars->map[(int)(game->player.pos_x + game->player.dir_x
-			* MOVE_SPEED)][(int)game->player.pos_y] == '3'
-		&& game->vars->map[(int)(game->player.pos_x + game->player.dir_x
-			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '3')))
-		game->player.pos_x += game->player.dir_x * MOVE_SPEED;
+			* MOVE_SPEED * 4)][(int)game->player.pos_y] == '3'))
+		game->player.pos_x += game->player.dir_x * MOVE_SPEED * 4;
 	if ((game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			+ game->player.dir_y * MOVE_SPEED)] == '0'
+			+ game->player.dir_y * MOVE_SPEED * 4)] == '0'
 		&& game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			+ game->player.dir_y * MOVE_SPEED * 2)] == '0')
+			+ game->player.dir_y * MOVE_SPEED * 4)] == '0')
 		|| (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			+ game->player.dir_y * MOVE_SPEED)] == '3'
-		&& game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			+ game->player.dir_y * MOVE_SPEED * 2)] == '3'))
-		{
-			printf(("Player pos x: %f\n"), game->player.pos_x);
-			game->player.pos_y += game->player.dir_y * MOVE_SPEED;
-		}
+			+ game->player.dir_y * MOVE_SPEED * 4)] == '3'))
+			game->player.pos_y += game->player.dir_y * MOVE_SPEED * 4;
 }
 
 void	move_backward(t_game *game)
 {
 	if ((game->vars->map[(int)(game->player.pos_x - game->player.dir_x
-				* MOVE_SPEED)][(int)game->player.pos_y] == '0'
+				* MOVE_SPEED * 4)][(int)game->player.pos_y] == '0'
 		&& game->vars->map[(int)(game->player.pos_x - game->player.dir_x
-			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '0')
+			* MOVE_SPEED * 4)][(int)game->player.pos_y] == '0')
 		|| (game->vars->map[(int)(game->player.pos_x - game->player.dir_x
-			* MOVE_SPEED)][(int)game->player.pos_y] == '3'
-		&& game->vars->map[(int)(game->player.pos_x - game->player.dir_x
-			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '3'))
-		game->player.pos_x -= game->player.dir_x * MOVE_SPEED;
+			* MOVE_SPEED * 4)][(int)game->player.pos_y] == '3'))
+		game->player.pos_x -= game->player.dir_x * MOVE_SPEED * 4;
 	if ((game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			- game->player.dir_y * MOVE_SPEED)] == '0'
+			- game->player.dir_y * MOVE_SPEED * 4)] == '0'
 		&& game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			- game->player.dir_y * MOVE_SPEED * 2)] == '0')
+			- game->player.dir_y * MOVE_SPEED * 4)] == '0')
 		|| (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			- game->player.dir_y * MOVE_SPEED)] == '3'
-		&& game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			- game->player.dir_y * MOVE_SPEED * 2)] == '3'))
-		game->player.pos_y -= game->player.dir_y * MOVE_SPEED;
+			- game->player.dir_y * MOVE_SPEED * 4)] == '3'))
+		game->player.pos_y -= game->player.dir_y * MOVE_SPEED * 4;
 }
 
 void	move_left(t_game *game)
 {
 	if ((game->vars->map[(int)(game->player.pos_x - game->player.dir_y
-				* MOVE_SPEED)][(int)game->player.pos_y] == '0'
+				* MOVE_SPEED * 4)][(int)game->player.pos_y] == '0'
 		&& game->vars->map[(int)(game->player.pos_x - game->player.dir_y
-			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '0')
+			* MOVE_SPEED * 4)][(int)game->player.pos_y] == '0')
 		|| (game->vars->map[(int)(game->player.pos_x - game->player.dir_y
-			* MOVE_SPEED)][(int)game->player.pos_y] == '3'
-		&& game->vars->map[(int)(game->player.pos_x - game->player.dir_y
-			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '3'))
-		game->player.pos_x -= game->player.dir_y * MOVE_SPEED;
+			* MOVE_SPEED * 4)][(int)game->player.pos_y] == '3'))
+		game->player.pos_x -= game->player.dir_y * MOVE_SPEED * 4;
 	if ((game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			+ game->player.dir_x * MOVE_SPEED)] == '0'
+			+ game->player.dir_x * MOVE_SPEED * 4)] == '0'
 		&& game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			+ game->player.dir_x * MOVE_SPEED * 2)] == '0')
+			+ game->player.dir_x * MOVE_SPEED * 4)] == '0')
 		|| (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			+ game->player.dir_x * MOVE_SPEED)] == '3'
-		&& game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			+ game->player.dir_x * MOVE_SPEED * 2)] == '3'))
-		game->player.pos_y += game->player.dir_x * MOVE_SPEED;
+			+ game->player.dir_x * MOVE_SPEED * 4)] == '3'))
+		game->player.pos_y += game->player.dir_x * MOVE_SPEED * 4;
 }
 
 void	move_right(t_game *game)
 {
 	if ((game->vars->map[(int)(game->player.pos_x + game->player.dir_y
-				* MOVE_SPEED)][(int)game->player.pos_y] == '0'
+				* MOVE_SPEED * 4)][(int)game->player.pos_y] == '0'
 		&& game->vars->map[(int)(game->player.pos_x + game->player.dir_y
-			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '0')
+			* MOVE_SPEED * 4)][(int)game->player.pos_y] == '0')
 		|| (game->vars->map[(int)(game->player.pos_x + game->player.dir_y
-			* MOVE_SPEED)][(int)game->player.pos_y] == '3'
-		&& game->vars->map[(int)(game->player.pos_x + game->player.dir_y
-			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '3'))
-		game->player.pos_x += game->player.dir_y * MOVE_SPEED;
+			* MOVE_SPEED * 4)][(int)game->player.pos_y] == '3'))
+		game->player.pos_x += game->player.dir_y * MOVE_SPEED * 4;
 	if ((game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			- game->player.dir_x * MOVE_SPEED)] == '0'
+			- game->player.dir_x * MOVE_SPEED * 4)] == '0'
 		&& game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			- game->player.dir_x * MOVE_SPEED * 2)] == '0')
+			- game->player.dir_x * MOVE_SPEED * 4)] == '0')
 		|| (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			- game->player.dir_x * MOVE_SPEED)] == '3'
-		&& game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
-			- game->player.dir_x * MOVE_SPEED * 2)] == '3'))
-		game->player.pos_y -= game->player.dir_x * MOVE_SPEED;
+			- game->player.dir_x * MOVE_SPEED * 4)] == '3'))
+		game->player.pos_y -= game->player.dir_x * MOVE_SPEED * 4;
 }
 
 int	movements(t_game *game)

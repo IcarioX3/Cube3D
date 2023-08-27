@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:17:32 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 17:34:53 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 18:54:50 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	mouse_move(t_game *game)
 }
 
 //open door if player is in front of it at a distance of one block
-void	open_door(t_game *game)
+void	open_and_close_door(t_game *game)
 {
 	int	x;
 	int	y;
@@ -46,6 +46,8 @@ void	open_door(t_game *game)
 	y = (int)(game->player.pos_y + game->player.dir_y);
 	if (game->vars->map[x][y] == '2')
 		game->vars->map[x][y] = '3';
+	else if (game->vars->map[x][y] == '3')
+		game->vars->map[x][y] = '2';
 }
 
 int	inputs(int key, t_game *game)
@@ -65,6 +67,6 @@ int	inputs(int key, t_game *game)
 	else if (key == LEFT_ARROW)
 		game->player.can_rotate = -1;
 	if (key == SPACE_KEY)
-		open_door(game);
+		open_and_close_door(game);
 	return (0);
 }

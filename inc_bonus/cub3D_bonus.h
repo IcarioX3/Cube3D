@@ -23,7 +23,7 @@
 # define TITLE "CUBE3D"
 # define WIDTH 960
 # define HEIGHT 540
-# define MOVE_SPEED 0.04
+# define MOVE_SPEED 0.01
 # define ROT_SPEED 0.03
 
 # define BLUE_SKY 0x87CEEB
