@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUBE3D_BONUS_H
-# define CUBE3D_BONUS_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
 # include "libft.h"
 # include "mlx.h"
@@ -62,7 +62,6 @@ typedef struct s_player
 	int		map_y;
 	int		can_move[4];
 	int		can_rotate;
-	int		old_x;
 }t_player;
 
 typedef struct s_camera
@@ -116,38 +115,39 @@ typedef struct s_game
 
 //PROTOTYPES
 
-void	start(t_game *game);
-void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
+void		start(t_game *game);
+void		my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 
 //CLEAN
-void	clean_mlx(t_game *game);
-void	clean_img(t_game *game);
-void	clean_parsing(t_game *game);
-int		terminate(t_game *game);
+void		clean_mlx(t_game *game);
+void		clean_img(t_game *game);
+void		clean_parsing(t_game *game);
+int			terminate(t_game *game);
 
 //ERROR
-void	exit_msg(char *msg, t_game *game);
+void		exit_msg(char *msg, t_game *game);
 //INIT
-void	init(t_game *game, t_vars *vars);
-void	init_mlx_struct(t_mlx *mlx);
-void	init_game_struct(t_game *game);
-void	init_player_struct(t_player *player);
-void	init_camera_struct(t_camera *camera);
-void	init_raycaster_struct(t_raycaster *raycaster);
-void	init_mlx(t_game *game);
-void	init_tex_struct(t_game *game);
-void	init_game(t_game *game, t_vars *vars);
-void	init_textures(t_game *game);
+void		init(t_game *game, t_vars *vars);
+void		init_mlx_struct(t_mlx *mlx);
+void		init_game_struct(t_game *game);
+void		init_player_struct(t_player *player);
+void		init_camera_struct(t_camera *camera);
+void		init_raycaster_struct(t_raycaster *raycaster);
+void		init_mlx(t_game *game);
+void		init_tex_struct(t_game *game);
+void		init_game(t_game *game, t_vars *vars);
+void		init_textures(t_game *game);
 //RAYCASTER
-void	raycaster(t_game *game);
-void	draw_pixels(t_game *game, int x);
-void	create_floor_and_ceiling(t_game *game);
-void	draw_minimap(t_game *game);
+void		raycaster(t_game *game);
+void		draw_pixels(t_game *game, int x);
+void		create_floor_and_ceiling(t_game *game);
+void		draw_minimap(t_game *game);
+void		draw_square(t_game *game, int x, int y, int color);
 //INPUTS
-int		inputs(int key, t_game *game);
-void	mouse_move(t_game *game);
-int		movements(t_game *game);
-void	rotate_left(t_game *game, double speed);
-void	rotate_right(t_game *game, double speed);
+int			inputs(int key, t_game *game);
+void		mouse_move(t_game *game);
+int			movements(t_game *game);
+void		rotate_left(t_game *game, double speed);
+void		rotate_right(t_game *game, double speed);
 
 #endif

@@ -6,34 +6,29 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:17:32 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 18:54:50 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 20:13:07 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_bonus.h"
 
+//Move camera to the right or to the left depending on the mouse movement
 void	mouse_move(t_game *game)
 {
-	int	x;
-	int	y;
+	int			x;
+	int			y;
+	static int	old_x = WIDTH / 2;
 
 	mlx_mouse_get_pos(game->mlx.ptr, game->mlx.win, &x, &y);
-	if (game->player.old_x == x)
-		game->player.old_x = x;
-	else if (game->player.old_x > x
-		&& y < HEIGHT && x < WIDTH && x > 0 && y > 0)
-	{
-		rotate_left(game, ROT_SPEED * (game->player.old_x - x)
-			/ game->player.old_x * 3);
-		game->player.old_x -= 1;
-	}
-	else if (game->player.old_x < x
-		&& y < HEIGHT && x < WIDTH && x > 0 && y > 0)
-	{
-		rotate_right(game, ROT_SPEED * (x - game->player.old_x)
-			/ game->player.old_x * 3);
-		game->player.old_x += 1;
-	}
+	if (x > WIDTH || x < 0 || y > HEIGHT || y < 0)
+		return ;
+	if (x == old_x)
+		return ;
+	else if (x < old_x)
+		rotate_left(game, ROT_SPEED * 2);
+	else if (x > old_x)
+		rotate_right(game, ROT_SPEED * 2);
+	old_x = x;
 }
 
 //open door if player is in front of it at a distance of one block
