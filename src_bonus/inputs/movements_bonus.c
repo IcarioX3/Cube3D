@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:18:31 by icario            #+#    #+#             */
-/*   Updated: 2023/08/26 18:05:50 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 14:41:14 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int	movements(t_game *game)
 		rotate_right(game, ROT_SPEED);
 	else if (game->player.can_rotate == -1)
 		rotate_left(game, ROT_SPEED);
+	mouse_move(game);
 	raycaster(game);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:28:51 by icario            #+#    #+#             */
-/*   Updated: 2023/08/26 18:07:11 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 14:40:45 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct s_player
 	int		map_y;
 	int		can_move[4];
 	int		can_rotate;
+	int		old_x;
 }t_player;
 
 typedef struct s_camera
@@ -142,6 +143,7 @@ void	draw_pixels(t_game *game, int x);
 void	create_floor_and_ceiling(t_game *game);
 //INPUTS
 int		inputs(int key, t_game *game);
+void	mouse_move(t_game *game);
 int		movements(t_game *game);
 void	rotate_left(t_game *game, double speed);
 void	rotate_right(t_game *game, double speed);
