@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_info_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:39:27 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 19:42:49 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 20:09:03 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,19 @@ int	check_first_six_lines(char **lines, char **expected, t_info *info, int i)
 		return (1);
 	return (0);
 }
+
+void clean_file(t_vars **vars)
+{
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		(*vars)->file_texture[i] = NULL;
+		i++;
+	}
+}
+
 
 int	check_file(t_vars **vars, char **map)
 {
