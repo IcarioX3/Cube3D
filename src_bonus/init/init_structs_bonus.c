@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:05:45 by icario            #+#    #+#             */
-/*   Updated: 2023/08/26 17:52:16 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 14:14:09 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	init_player_struct(t_player *player)
 	player->can_move[2] = 0;
 	player->can_move[3] = 0;
 	player->can_rotate = 0;
+	player->old_x = WIDTH / 2;
 }
 
 /*Plane x and plane y are the camera plane coordinates
