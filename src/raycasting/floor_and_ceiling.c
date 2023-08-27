@@ -6,11 +6,11 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 18:49:06 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/24 10:56:38 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 16:40:28 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include "cub3D.h"
 
 int	rgb_to_int(int rgb[3])
 {

@@ -6,11 +6,11 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:03:24 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 19:04:09 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 18:12:05 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D_bonus.h"
+#include "cub3D_bonus.h"
 #include "parsing_bonus.h"
 
 void	init_camera(t_game *game)
@@ -39,8 +39,8 @@ void	init_camera(t_game *game)
 
 void	init_player(t_player *player, t_vars *vars)
 {
-	player->pos_x = vars->begin_x;
-	player->pos_y = vars->begin_y;
+	player->pos_x = vars->begin_x + 0.5;
+	player->pos_y = vars->begin_y + 0.5;
 	if (vars->player == 'N')
 	{
 		player->dir_x = -1;

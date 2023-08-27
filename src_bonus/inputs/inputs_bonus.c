@@ -6,11 +6,11 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:17:32 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 15:46:45 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 18:54:50 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D_bonus.h"
+#include "cub3D_bonus.h"
 
 void	mouse_move(t_game *game)
 {
@@ -36,6 +36,20 @@ void	mouse_move(t_game *game)
 	}
 }
 
+//open door if player is in front of it at a distance of one block
+void	open_and_close_door(t_game *game)
+{
+	int	x;
+	int	y;
+
+	x = (int)(game->player.pos_x + game->player.dir_x);
+	y = (int)(game->player.pos_y + game->player.dir_y);
+	if (game->vars->map[x][y] == '2')
+		game->vars->map[x][y] = '3';
+	else if (game->vars->map[x][y] == '3')
+		game->vars->map[x][y] = '2';
+}
+
 int	inputs(int key, t_game *game)
 {
 	if (key == ESCAPE_KEY)
@@ -52,5 +66,7 @@ int	inputs(int key, t_game *game)
 		game->player.can_rotate = 1;
 	else if (key == LEFT_ARROW)
 		game->player.can_rotate = -1;
+	if (key == SPACE_KEY)
+		open_and_close_door(game);
 	return (0);
 }

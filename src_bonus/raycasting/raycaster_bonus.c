@@ -6,11 +6,11 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:54:15 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 20:28:30 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 17:10:09 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D_bonus.h"
+#include "cub3D_bonus.h"
 
 void	init_value(t_game *game, int x)
 {
@@ -84,7 +84,8 @@ void	dda(t_game *game)
 			game->player.map_y += game->raycaster.step_y;
 			game->raycaster.side = 1;
 		}
-		if (game->vars->map[game->player.map_x][game->player.map_y] == '1')
+		if (game->vars->map[game->player.map_x][game->player.map_y] == '1'
+			|| game->vars->map[game->player.map_x][game->player.map_y] == '2')
 			game->raycaster.hit = 1;
 	}
 	if (game->raycaster.side == 0)

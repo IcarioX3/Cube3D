@@ -6,11 +6,11 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 18:46:06 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/25 18:03:15 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 16:40:28 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include "cub3D.h"
 
 void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color)
 {

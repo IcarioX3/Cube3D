@@ -6,13 +6,13 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 15:52:03 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 16:31:57 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 17:48:25 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //draw a minimap at the bottom right of the screen
 
-#include "cube3D_bonus.h"
+#include "cub3D_bonus.h"
 
 //draw a square of size 5x5
 static void	draw_square(t_game *game, int x, int y, int color)
@@ -59,8 +59,9 @@ void	draw_minimap(t_game *game)
 				draw_square(game, x, y, 0x9370DB);
 			else if (game->vars->map[y][x] == '0')
 				draw_square(game, x, y, 0x000000);
-			else if (game->vars->map[y][x] == '2')
-				draw_square(game, x, y, 0xFF0000);
+			else if (game->vars->map[y][x] == '2'
+				|| game->vars->map[y][x] == '3')
+				draw_square(game, x, y, 0xFFFF00);
 			x++;
 		}
 		y++;

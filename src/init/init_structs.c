@@ -6,11 +6,11 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:05:17 by icario            #+#    #+#             */
-/*   Updated: 2023/08/26 18:09:25 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 16:40:28 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include "cub3D.h"
 
 void	init_game_struct(t_game *game)
 {

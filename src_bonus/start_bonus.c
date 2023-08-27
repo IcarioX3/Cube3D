@@ -6,11 +6,11 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:56:44 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 13:39:02 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 18:10:45 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D_bonus.h"
+#include "cub3D_bonus.h"
 #include "parsing_bonus.h"
 
 int	move_mouse(int x, int y, t_game *game)
@@ -40,14 +40,9 @@ int	key_released(int key, t_game *game)
 
 void	start(t_game *game)
 {
-	int		mouse_x;
-	int		mouse_y;
-
 	game->floor_color = GREEN_GRASS;
 	game->ceiling_color = BLUE_SKY;
 	create_floor_and_ceiling(game);
-	raycaster(game);
-	mlx_mouse_get_pos(game->mlx.ptr, game->mlx.win, &mouse_x, &mouse_y);
 	mlx_hook(game->mlx.win, 6, 1L << 6, move_mouse, game);
 	mlx_do_sync(game->mlx.ptr);
 	mlx_hook(game->mlx.win, 2, 1L << 0, inputs, game);

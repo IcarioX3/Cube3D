@@ -6,11 +6,11 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:41:57 by icario            #+#    #+#             */
-/*   Updated: 2023/07/13 14:31:07 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 16:40:28 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include "cub3D.h"
 
 void	exit_msg(char *msg, t_game *game)
 {

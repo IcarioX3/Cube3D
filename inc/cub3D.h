@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cube3D_bonus.h                                     :+:      :+:    :+:   */
+/*   cub3D.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 18:28:51 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 15:59:18 by icario           ###   ########.fr       */
+/*   Created: 2023/08/25 17:45:42 by icario            #+#    #+#             */
+/*   Updated: 2023/08/26 18:20:22 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUBE3D_BONUS_H
-# define CUBE3D_BONUS_H
+#ifndef CUBE3D_H
+# define CUBE3D_H
 
 # include "libft.h"
 # include "mlx.h"
-# include "parsing_bonus.h"
+# include "parsing.h"
 # include <math.h>
 
 //DEFINES
 
 # define TITLE "CUBE3D"
 # define WIDTH 960
-# define HEIGHT 540
-# define MOVE_SPEED 0.04
+# define HEIGHT 540 
+# define MOVE_SPEED 0.03
 # define ROT_SPEED 0.03
 
 # define BLUE_SKY 0x87CEEB
@@ -61,7 +61,6 @@ typedef struct s_player
 	int		map_y;
 	int		can_move[4];
 	int		can_rotate;
-	int		old_x;
 }t_player;
 
 typedef struct s_camera
@@ -141,12 +140,11 @@ void	init_textures(t_game *game);
 void	raycaster(t_game *game);
 void	draw_pixels(t_game *game, int x);
 void	create_floor_and_ceiling(t_game *game);
-void	draw_minimap(t_game *game);
 //INPUTS
 int		inputs(int key, t_game *game);
-void	mouse_move(t_game *game);
-int		movements(t_game *game);
-void	rotate_left(t_game *game, double speed);
-void	rotate_right(t_game *game, double speed);
+int		key_released(int key, t_game *game);
+int		movements(t_game *game, int key);
+void	rotate_left(t_game *game);
+void	rotate_right(t_game *game);
 
 #endif

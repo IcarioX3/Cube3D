@@ -6,11 +6,11 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:50:25 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/26 18:09:54 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 16:40:28 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include "cub3D.h"
 
 void	rotate_right(t_game *game)
 {

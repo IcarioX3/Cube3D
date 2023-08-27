@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:07:48 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 14:50:49 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/27 16:40:28 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D.h"
+#include "cub3D.h"
 #include "parsing.h"
 
 void	init(t_game *game, t_vars *vars)

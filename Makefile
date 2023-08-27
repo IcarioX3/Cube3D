@@ -6,7 +6,7 @@
 #    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/27 15:53:49 by icario           ###   ########.fr        #
+#    Updated: 2023/08/27 16:38:17 by icario           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ BLUE 	= \033[0;34m
 END		= \033[0m
 
 ### Names ###
-NAME 		= cube3D
-NAME_BONUS	= cube3D_bonus
+NAME 		= cub3D
+NAME_BONUS	= cub3D_bonus
 LIBNAME 	= libft.a
 CC 			= gcc
 CFLAGS		= -Wall -Werror -Wextra -g3

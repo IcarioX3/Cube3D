@@ -6,11 +6,11 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:04:21 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 19:04:43 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 16:40:51 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3D_bonus.h"
+#include "cub3D_bonus.h"
 
 void	init_mlx(t_game *game)
 {
