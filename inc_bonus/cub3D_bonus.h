@@ -31,6 +31,7 @@
 # define TEX_WIDTH 16
 
 # define ESCAPE_KEY 65307
+# define SPACE_KEY 32
 # define W_KEY 119
 # define A_KEY 97
 # define S_KEY 115

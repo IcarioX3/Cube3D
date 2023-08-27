@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:26:52 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/27 16:40:28 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 18:12:36 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	init_camera(t_game *game)
 
 void	init_player(t_player *player, t_vars *vars)
 {
-	player->pos_x = vars->begin_x;
-	player->pos_y = vars->begin_y;
+	player->pos_x = vars->begin_x + 0.5;
+	player->pos_y = vars->begin_y + 0.5;
 	if (vars->player == 'N')
 	{
 		player->dir_x = -1;

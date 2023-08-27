@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:43:02 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 19:43:39 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 17:08:52 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	check_map_char(int i, int j, char **map)
 {
 	if (map[i][j] != '0' && map[i][j] != '1'
 	&& map[i][j] != 'N' && map[i][j] != 'S' && map[i][j] != 'E'
-	&& map[i][j] != 'W' && map[i][j] != ' ')
+	&& map[i][j] != 'W' && map[i][j] != ' ' && map[i][j] != '2')
 		return (write (2, "Error : Wrong char in map\n", 26), 1);
 	return (0);
 }
