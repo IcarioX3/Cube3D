@@ -17,13 +17,14 @@
 # include "mlx.h"
 # include "parsing_bonus.h"
 # include <math.h>
+# include <sys/time.h>
 
 //DEFINES
 
 # define TITLE "CUBE3D"
 # define WIDTH 1080
 # define HEIGHT 720
-# define MOVE_SPEED 0.02
+# define MOVE_SPEED 0.01
 # define ROT_SPEED 0.03
 
 # define BLUE_SKY 0x87CEEB
@@ -111,6 +112,7 @@ typedef struct s_game
 	t_vars		*vars;
 	int			floor_color;
 	int			ceiling_color;
+	double		shade;
 }t_game;
 
 //PROTOTYPES
@@ -143,6 +145,7 @@ void		draw_pixels(t_game *game, int x);
 void		create_floor_and_ceiling(t_game *game);
 void		draw_minimap(t_game *game);
 void		draw_square(t_game *game, int x, int y, int color);
+void		shade(t_game *game);
 //INPUTS
 int			inputs(int key, t_game *game);
 void		mouse_move(t_game *game);

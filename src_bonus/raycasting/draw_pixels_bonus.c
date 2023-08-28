@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_pixels_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:52:44 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 20:20:24 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/28 16:47:50 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,41 @@ void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-unsigned int	tex_pix_get(t_tex *tex, int x, int y)
+unsigned int	tex_pix_get(t_game *game, int index_tex, int x, int y)
 {
 	char	*red;
 	char	*green;
 	char	*blue;
+	int		color;
 
-	red = tex->addr + (y * tex->line_length + x * (tex->bits_per_pixel / 8));
+	red = game->textures[index_tex].addr + (y
+			* game->textures[index_tex].line_length + x
+			* (game->textures[index_tex].bits_per_pixel / 8));
 	green = red + 1;
 	blue = green + 1;
-	return ((256 * 256 * *red + 256 * *green + *blue));
+	color = (256 * 256 * *red + 256 * *green + *blue);
+	if (color == 3418972)
+		color -= game->shade * 1000;
+	if (color == 1708858)
+		color -= game->shade * 1000;
+	if (color == 2758958)
+		color -= game->shade * 1000;
+	return (color);
 }	
 
 void	put_tex(t_game *game, int x, int y)
 {
 	if (game->raycaster.side == 0 && game->raycaster.ray_dir_x > 0)
-		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(&game->textures[0],
+		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(game, 0,
 				game->raycaster.tex_x, game->raycaster.tex_y));
 	else if (game->raycaster.side == 0 && game->raycaster.ray_dir_x < 0)
-		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(&game->textures[1],
+		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(game, 1,
 				game->raycaster.tex_x, game->raycaster.tex_y));
 	else if (game->raycaster.side == 1 && game->raycaster.ray_dir_y > 0)
-		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(&game->textures[2],
+		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(game, 2,
 				game->raycaster.tex_x, game->raycaster.tex_y));
-	else
-		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(&game->textures[3],
+	else if (game->raycaster.side == 1 && game->raycaster.ray_dir_y < 0)
+		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(game, 3,
 				game->raycaster.tex_x, game->raycaster.tex_y));
 }
 
@@ -86,7 +96,7 @@ void	draw_pixels(t_game *game, int x)
 		draw_start = 0;
 	draw_end = line_height / 2 + HEIGHT / 2;
 	if (draw_end >= HEIGHT)
-		draw_end = HEIGHT - 1;
+		draw_end = HEIGHT;
 	game->raycaster.step = 1.0 * TEX_WIDTH / line_height;
 	game->raycaster.tex_pos = (draw_start - HEIGHT / 2 + line_height / 2)
 		* game->raycaster.step;

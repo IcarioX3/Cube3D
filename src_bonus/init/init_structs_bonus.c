@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:05:45 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 19:51:32 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/28 14:22:38 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	init_game_struct(t_game *game)
 	}
 	game->ceiling_color = 0;
 	game->floor_color = 0;
+	game->shade = 0;
 }
 
 void	init_mlx_struct(t_mlx *mlx)
