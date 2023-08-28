@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:46:27 by icario            #+#    #+#             */
-/*   Updated: 2023/08/25 19:46:49 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 20:06:58 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	parsing(t_vars **vars)
 {
+	clean_file(vars);
 	if (check_file(vars, (*vars)->map) == 1)
 		return (1);
 	if (split_file_map(vars) == 1)

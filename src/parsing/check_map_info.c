@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_info.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:51:01 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/23 11:06:53 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/27 20:10:43 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,18 @@ int	check_first_six_lines(char **lines, char **expected, t_info *info, int i)
 	if (found_line != 6)
 		return (1);
 	return (0);
+}
+
+void clean_file(t_vars **vars)
+{
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		(*vars)->file_texture[i] = NULL;
+		i++;
+	}
 }
 
 int	check_file(t_vars **vars, char **map)

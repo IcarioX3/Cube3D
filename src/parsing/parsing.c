@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:52:56 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/25 15:45:22 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/27 20:09:42 by franck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	parsing(t_vars **vars)
 {
+	clean_file(vars);
 	if (check_file(vars, (*vars)->map) == 1)
 		return (1);
 	if (split_file_map(vars) == 1)
