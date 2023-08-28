@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 19:44:46 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 18:59:13 by icario           ###   ########.fr       */
+/*   Created: 2023/08/22 09:04:04 by frgojard          #+#    #+#             */
+/*   Updated: 2023/08/28 17:11:05 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	fill2(int i, int j, char c, char **map)
 	int		has_neighbor;
 
 	has_neighbor = 0;
-	if (c == '0' || c == 'S' || c == 'N' || c == 'E' || c == 'W' || c == '2')
+	if (c == '0' || c == 'S' || c == 'N' || c == 'E' || c == 'W')
 	{
 		if (i > 0 && map[i - 1][j] == ' ')
 			has_neighbor = 1;

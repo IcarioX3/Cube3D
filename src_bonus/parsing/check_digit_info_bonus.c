@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_digit_info_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 19:38:04 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 20:07:31 by franck           ###   ########.fr       */
+/*   Created: 2023/08/22 08:55:55 by frgojard          #+#    #+#             */
+/*   Updated: 2023/08/28 17:10:44 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ int	check_overflow(char *str, int info[], int i)
 	len = -1;
 	split = NULL;
 	split = ft_split(str, ',');
+	if (!split)
+		return (1);
 	while (++i < 3)
 	{
 		while (split[i][++len])
@@ -89,10 +91,8 @@ int	check_overflow(char *str, int info[], int i)
 		tab[i] = ft_atoi(split[i]);
 		info[i] = ft_atoi(split[i]);
 		if (tab[i] > 255)
-		{
-			free_double_tab(split);
-			return (write (2, "error: textures not between 0 and 255\n", 39), 1);
-		}
+			return (free_double_tab(split),
+				write (2, "error: textures not between 0 and 255\n", 39), 1);
 	}
 	free_double_tab(split);
 	return (0);
