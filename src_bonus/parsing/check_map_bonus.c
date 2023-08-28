@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:52:48 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/28 17:10:55 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/28 17:26:42 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	check_map_char(int i, int j, char **map)
 {
 	if (map[i][j] != '0' && map[i][j] != '1'
 	&& map[i][j] != 'N' && map[i][j] != 'S' && map[i][j] != 'E'
-	&& map[i][j] != 'W' && map[i][j] != ' ')
+	&& map[i][j] != 'W' && map[i][j] != ' ' && map[i][j] != '2')
 		return (write (2, "Error : Wrong char in map\n", 26), 1);
 	return (0);
 }

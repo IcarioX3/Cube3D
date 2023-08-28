@@ -6,7 +6,7 @@
 #    By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/28 16:55:13 by ablevin          ###   ########.fr        #
+#    Updated: 2023/08/28 17:20:11 by ablevin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,7 +109,7 @@ $(OBJ_DIR_BONUS)/%.o: $(BONUS_DIR)/%.c $(HEADER_BONUS)
 		@mkdir -p $(@D)		
 		@$(CC) -c $(CFLAGS) -I$(LIB_DIR) -Imlx -I$(INC_DIR_BONUS) $< -o $@
 		
-all: $(NAME) $(NAME_BONUS)
+all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER) $(INC_DIR)/parsing.h
 		@echo "Baking $(LIB_DIR)..."
