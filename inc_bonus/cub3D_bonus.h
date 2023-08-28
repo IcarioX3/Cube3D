@@ -21,10 +21,10 @@
 //DEFINES
 
 # define TITLE "CUBE3D"
-# define WIDTH 1920
-# define HEIGHT 1080
-# define MOVE_SPEED 0.005
-# define ROT_SPEED 0.01
+# define WIDTH 1080
+# define HEIGHT 720
+# define MOVE_SPEED 0.02
+# define ROT_SPEED 0.03
 
 # define BLUE_SKY 0x87CEEB
 # define GREEN_GRASS 0x00FF00

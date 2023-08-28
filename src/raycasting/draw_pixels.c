@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_pixels.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 18:46:06 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/27 16:40:28 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/28 12:16:38 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ unsigned int	tex_pix_get(t_tex *tex, int x, int y)
 	red = tex->addr + (y * tex->line_length + x * (tex->bits_per_pixel / 8));
 	green = red + 1;
 	blue = green + 1;
-	return (256 * 256 * *red + 256 * *green + *blue);
+	return ((256 * 256 * *red + 256 * *green + *blue));
 }	
 
 void	put_tex(t_game *game, int x, int y)
