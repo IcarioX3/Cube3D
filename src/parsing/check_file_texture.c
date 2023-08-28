@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_file_texture.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 15:13:22 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/27 19:41:20 by franck           ###   ########.fr       */
+/*   Updated: 2023/08/28 10:38:31 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int	check_file_texture(char **map_info, t_vars **vars)
 			(*vars)->file_texture[3] = init_texture_var(map_info[i]);
 		else if (strncmp(map_info[i], "EA ", 3) == 0)
 			(*vars)->file_texture[2] = init_texture_var(map_info[i]);
-		printf ("%s\n", (*vars)->file_texture[i]);
 		i++;
 	}
 	if (check_open_file((*vars)->file_texture) == 1)
