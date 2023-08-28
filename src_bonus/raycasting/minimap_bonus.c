@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 15:52:03 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 17:48:25 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 20:05:15 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "cub3D_bonus.h"
 
 //draw a square of size 5x5
-static void	draw_square(t_game *game, int x, int y, int color)
+void	draw_square(t_game *game, int x, int y, int color)
 {
 	int	i;
 	int	j;

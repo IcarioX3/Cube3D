@@ -6,7 +6,7 @@
 /*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:52:44 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 16:40:51 by icario           ###   ########.fr       */
+/*   Updated: 2023/08/27 20:20:24 by icario           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ unsigned int	tex_pix_get(t_tex *tex, int x, int y)
 	red = tex->addr + (y * tex->line_length + x * (tex->bits_per_pixel / 8));
 	green = red + 1;
 	blue = green + 1;
-	return (256 * 256 * *red + 256 * *green + *blue);
+	return ((256 * 256 * *red + 256 * *green + *blue));
 }	
 
 void	put_tex(t_game *game, int x, int y)
