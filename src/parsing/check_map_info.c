@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_info.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:51:01 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/27 20:10:43 by franck           ###   ########.fr       */
+/*   Updated: 2023/08/28 17:03:40 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	check_first_six_lines(char **lines, char **expected, t_info *info, int i)
 	return (0);
 }
 
-void clean_file(t_vars **vars)
+void	clean_file(t_vars **vars)
 {
 	int	i;
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: icario <icario@student.42.fr>              +#+  +:+       +#+         #
+#    By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:54:22 by icario            #+#    #+#              #
-#    Updated: 2023/08/27 16:38:17 by icario           ###   ########.fr        #
+#    Updated: 2023/08/28 16:55:13 by ablevin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,6 +93,7 @@ HEADER	= $(addprefix $(INC_DIR)/, $(NAME).h)
 #### Bonus ####
 _SRC_BONUS = $(_SRC:.c=_bonus.c) \
 			$(RAYCASTING_DIR)/minimap_bonus.c \
+			$(RAYCASTING_DIR)/shade_bonus.c
 
 SRC_BONUS	= $(addprefix $(SRC_DIR)/, $(_SRC_BONUS))
 OBJ_BONUS	= $(SRC_BONUS:$(SRC_DIR)%.c=$(OBJ_DIR_BONUS)%.o)

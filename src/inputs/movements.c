@@ -6,7 +6,7 @@
 /*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 17:50:52 by icario            #+#    #+#             */
-/*   Updated: 2023/08/28 14:16:49 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/08/28 15:27:19 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,40 @@ void	move_forward(t_game *game)
 {
 	if (game->vars->map[(int)(game->player.pos_x + game->player.dir_x
 			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '0')
-		game->player.pos_x += game->player.dir_x * MOVE_SPEED * 2;
+		game->player.pos_x += game->player.dir_x * MOVE_SPEED;
 	if (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
 		+ game->player.dir_y * MOVE_SPEED * 2)] == '0')
-		game->player.pos_y += game->player.dir_y * MOVE_SPEED * 2;
+		game->player.pos_y += game->player.dir_y * MOVE_SPEED;
 }
 
 void	move_backward(t_game *game)
 {
 	if (game->vars->map[(int)(game->player.pos_x - game->player.dir_x
 			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '0')
-		game->player.pos_x -= game->player.dir_x * MOVE_SPEED * 2;
+		game->player.pos_x -= game->player.dir_x * MOVE_SPEED;
 	if (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
 		- game->player.dir_y * MOVE_SPEED * 2)] == '0')
-		game->player.pos_y -= game->player.dir_y * MOVE_SPEED * 2;
+		game->player.pos_y -= game->player.dir_y * MOVE_SPEED;
 }
 
 void	move_right(t_game *game)
 {
 	if (game->vars->map[(int)(game->player.pos_x + game->player.dir_y
 			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '0')
-		game->player.pos_x += game->player.dir_y * MOVE_SPEED * 2;
+		game->player.pos_x += game->player.dir_y * MOVE_SPEED;
 	if (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
 		- game->player.dir_x * MOVE_SPEED * 2)] == '0')
-		game->player.pos_y -= game->player.dir_x * MOVE_SPEED * 2;
+		game->player.pos_y -= game->player.dir_x * MOVE_SPEED;
 }
 
 void	move_left(t_game *game)
 {
 	if (game->vars->map[(int)(game->player.pos_x - game->player.dir_y
 			* MOVE_SPEED * 2)][(int)game->player.pos_y] == '0')
-		game->player.pos_x -= game->player.dir_y * MOVE_SPEED * 2;
+		game->player.pos_x -= game->player.dir_y * MOVE_SPEED;
 	if (game->vars->map[(int)game->player.pos_x][(int)(game->player.pos_y
 		+ game->player.dir_x * MOVE_SPEED * 2)] == '0')
-		game->player.pos_y += game->player.dir_x * MOVE_SPEED * 2;
+		game->player.pos_y += game->player.dir_x * MOVE_SPEED;
 }
 
 int	movements(t_game *game, int key)
