@@ -6,7 +6,7 @@
 /*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:01:55 by ablevin           #+#    #+#             */
-/*   Updated: 2023/08/28 17:03:06 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/08/29 15:05:10 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 //DEFINES
 
 # define TITLE "CUBE3D"
-# define WIDTH 960
-# define HEIGHT 540 
-# define MOVE_SPEED 0.01
+# define WIDTH 1280
+# define HEIGHT 720
+# define MOVE_SPEED 0.03
 # define ROT_SPEED 0.01
 
 # define BLUE_SKY 0x87CEEB

@@ -22,7 +22,7 @@
 //DEFINES
 
 # define TITLE "CUBE3D"
-# define WIDTH 1080
+# define WIDTH 1280
 # define HEIGHT 720
 # define MOVE_SPEED 0.01
 # define ROT_SPEED 0.03

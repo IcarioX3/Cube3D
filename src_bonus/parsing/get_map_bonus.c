@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:59:01 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/28 17:11:12 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/08/29 14:51:00 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	check_map_line(char *map)
 	i = 0;
 	if (map == NULL)
 		return (1);
+	if (map[0] == '\n')
+		i++;
 	while (map[i])
 	{
 		if (map[i] == '\n' && map[i + 1] == '\n' && map[i - 1] == '1'
