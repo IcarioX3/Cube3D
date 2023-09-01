@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franck <franck@student.42.fr>              +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:52:31 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 20:04:23 by franck           ###   ########.fr       */
+/*   Updated: 2023/09/01 11:55:49 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct s_info
 void	free_double_tab(char **args);
 char	*get_map(int fd);
 int		parsing(t_vars **vars);
-int		split_file_map(t_vars **vars);
+int		split_file_map(t_vars **vars, int i, int len);
 int		check_map(t_vars **vars, char **map, int nb_player);
 int		check_file(t_vars **vars, char **map);
 int		check_texture_overflow(t_vars **vars);

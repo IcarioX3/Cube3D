@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:52:59 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/22 14:00:18 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/09/01 11:48:19 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	find_longest_line(char **lines, int start_line)
 	i = start_line;
 	while (lines[i] != NULL)
 	{
-		current_length = strlen(lines[i]);
+		current_length = ft_strlen(lines[i]);
 		if (current_length > longest_length)
 			longest_length = current_length;
 		i++;
@@ -55,17 +55,11 @@ int	find_longest_line(char **lines, int start_line)
 	return (longest_length);
 }
 
-int	split_file_map(t_vars **vars)
+int	split_file_map(t_vars **vars, int i, int len)
 {
-	int		i;
 	char	**tmp;
-	int		len;
 
-	i = -1;
-	len = 0;
 	(*vars)->longest_line = find_longest_line((*vars)->map, 6);
-	if (vars == NULL || *vars == NULL)
-		return (1);
 	(*vars)->map_info = malloc(7 * sizeof(char *));
 	if ((*vars)->map_info == NULL)
 		return (1);
@@ -75,9 +69,15 @@ int	split_file_map(t_vars **vars)
 	while ((*vars)->map[len])
 		len++;
 	tmp = malloc((len - 6 + 1) * sizeof(char *));
+	if (tmp == NULL)
+		return (1);
 	i = -1;
 	while (++i < len - 6)
+	{
 		tmp[i] = ft_strdup_cub((*vars)->map[i + 6], (*vars)->longest_line);
+		if (tmp[i] == NULL)
+			return (1);
+	}
 	free_double_tab((*vars)->map);
 	(*vars)->map = tmp;
 	(*vars)->map[i] = NULL;

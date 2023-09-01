@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:52:56 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/28 17:11:14 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/09/01 11:53:08 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	parsing(t_vars **vars)
 	clean_file(vars);
 	if (check_file(vars, (*vars)->map) == 1)
 		return (1);
-	if (split_file_map(vars) == 1)
+	if (split_file_map(vars, -1, 0) == 1)
 		return (1);
 	if (check_map(vars, (*vars)->map, 0) == 1)
 		return (1);
@@ -44,14 +44,13 @@ int	init_parsing(t_vars **vars, char **av, int fd)
 	}
 	(*vars)->map = ft_split((*vars)->mapline, '\n');
 	if ((*vars)->map == NULL)
-	{
-		free((*vars)->mapline);
-		return (free(*vars), 1);
-	}
+		return (free((*vars)->mapline), free(*vars), 1);
 	(*vars)->ceiling_info = NULL;
 	(*vars)->floor_info = NULL;
 	(*vars)->file_texture = NULL;
 	(*vars)->file_texture = malloc(4 * sizeof(char *));
+	if ((*vars)->file_texture == NULL)
+		return (1);
 	close(fd);
 	return (0);
 }

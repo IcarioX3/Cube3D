@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_info_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:19:46 by ablevin           #+#    #+#             */
-/*   Updated: 2023/08/28 17:19:48 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/09/01 10:44:35 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ int	check_double_line(char **lines, t_info *info)
 	i = 0;
 	while (i < 6)
 	{
-		if (strncmp(lines[i], "NO ", 3) == 0)
+		if (ft_strncmp(lines[i], "NO ", 3) == 0)
 			info->no++;
-		else if (strncmp(lines[i], "SO ", 3) == 0)
+		else if (ft_strncmp(lines[i], "SO ", 3) == 0)
 			info->so++;
-		else if (strncmp(lines[i], "WE ", 3) == 0)
+		else if (ft_strncmp(lines[i], "WE ", 3) == 0)
 			info->we++;
-		else if (strncmp(lines[i], "EA ", 3) == 0)
+		else if (ft_strncmp(lines[i], "EA ", 3) == 0)
 			info->ea++;
-		else if (strncmp(lines[i], "F ", 2) == 0)
+		else if (ft_strncmp(lines[i], "F ", 2) == 0)
 			info->f++;
-		else if (strncmp(lines[i], "C ", 2) == 0)
+		else if (ft_strncmp(lines[i], "C ", 2) == 0)
 			info->c++;
 		i++;
 	}
@@ -50,7 +50,7 @@ int	check_first_six_lines(char **lines, char **expected, t_info *info, int i)
 		j = 0;
 		while (j < 6)
 		{
-			if (strncmp(lines[i], expected[j],
+			if (ft_strncmp(lines[i], expected[j],
 					ft_strlen(expected[j])) == 0)
 			{
 				found_line++;

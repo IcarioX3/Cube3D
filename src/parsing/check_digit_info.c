@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 08:55:55 by frgojard          #+#    #+#             */
-/*   Updated: 2023/08/28 16:46:10 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/09/01 10:37:47 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,24 +70,48 @@ int	remove_until_first_digit_floor(t_vars **vars, char *str)
 	return (0);
 }
 
+int	check_len_colors(char **split, int i)
+{
+	int	len;
+	int	j;
+
+	while (split[i])
+	{
+		j = 0;
+		while (split[i][j] == ' ')
+			j++;
+		len = 0;
+		while ((split[i][j] != ' ' && split[i][j] != '\0'))
+		{
+			len++;
+			j++;
+		}
+		while (split[i][j] == ' ')
+			j++;
+		if (split[i][j] != '\0')
+			return (free_double_tab(split),
+				write (2, "error: textures\n", 16), 1);
+		if (len > 3)
+			return (free_double_tab(split),
+				write (2, "error: textures not between 0 and 255\n", 39), 1);
+		i++;
+	}
+	return (0);
+}
+
 int	check_overflow(char *str, int info[], int i)
 {
 	char	**split;
-	int		len;
 	int		tab[3];
 
-	len = -1;
 	split = NULL;
 	split = ft_split(str, ',');
 	if (!split)
 		return (1);
+	if (check_len_colors(split, 0) == 1)
+		return (1);
 	while (++i < 3)
 	{
-		while (split[i][++len])
-			if (len > 2 && split[i][len] != ' ')
-				return (free_double_tab(split),
-					write (2, "error: textures not between 0 and 255\n", 39), 1);
-		len = 0;
 		tab[i] = ft_atoi(split[i]);
 		info[i] = ft_atoi(split[i]);
 		if (tab[i] > 255)
