@@ -6,7 +6,7 @@
 /*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:52:44 by icario            #+#    #+#             */
-/*   Updated: 2023/08/28 16:47:50 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/09/01 14:37:00 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ unsigned int	tex_pix_get(t_game *game, int index_tex, int x, int y)
 
 void	put_tex(t_game *game, int x, int y)
 {
-	if (game->raycaster.side == 0 && game->raycaster.ray_dir_x > 0)
+	if (game->raycaster.side == 0 && game->raycaster.ray_dir_x < 0)
 		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(game, 0,
 				game->raycaster.tex_x, game->raycaster.tex_y));
-	else if (game->raycaster.side == 0 && game->raycaster.ray_dir_x < 0)
+	else if (game->raycaster.side == 0 && game->raycaster.ray_dir_x > 0)
 		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(game, 1,
 				game->raycaster.tex_x, game->raycaster.tex_y));
 	else if (game->raycaster.side == 1 && game->raycaster.ray_dir_y > 0)

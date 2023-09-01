@@ -6,7 +6,7 @@
 /*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 18:46:06 by antoine           #+#    #+#             */
-/*   Updated: 2023/08/28 12:16:38 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/09/01 14:38:34 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ unsigned int	tex_pix_get(t_tex *tex, int x, int y)
 
 void	put_tex(t_game *game, int x, int y)
 {
-	if (game->raycaster.side == 0 && game->raycaster.ray_dir_x > 0)
+	if (game->raycaster.side == 0 && game->raycaster.ray_dir_x < 0)
 		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(&game->textures[0],
 				game->raycaster.tex_x, game->raycaster.tex_y));
-	else if (game->raycaster.side == 0 && game->raycaster.ray_dir_x < 0)
+	else if (game->raycaster.side == 0 && game->raycaster.ray_dir_x > 0)
 		my_mlx_pixel_put(&game->mlx, x, y, tex_pix_get(&game->textures[1],
 				game->raycaster.tex_x, game->raycaster.tex_y));
 	else if (game->raycaster.side == 1 && game->raycaster.ray_dir_y > 0)
@@ -85,8 +85,8 @@ void	draw_pixels(t_game *game, int x)
 	if (draw_start < 0)
 		draw_start = 0;
 	draw_end = line_height / 2 + HEIGHT / 2;
-	if (draw_end >= HEIGHT)
-		draw_end = HEIGHT - 1;
+	if (draw_end > HEIGHT)
+		draw_end = HEIGHT;
 	game->raycaster.step = 1.0 * TEX_WIDTH / line_height;
 	game->raycaster.tex_pos = (draw_start - HEIGHT / 2 + line_height / 2)
 		* game->raycaster.step;

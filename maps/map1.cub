@@ -1,7 +1,7 @@
 EA textures/east_wall.xpm
 SO textures/south_wall.xpm
 WE textures/west_wall.xpm
-C 0,16,200    
+C 0,16,255
 F 50,50,255
 NO textures/north_wall.xpm
      1111111111111111111111111
