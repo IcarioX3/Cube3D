@@ -6,7 +6,7 @@
 /*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:01:55 by ablevin           #+#    #+#             */
-/*   Updated: 2023/08/29 15:05:10 by ablevin          ###   ########.fr       */
+/*   Updated: 2023/09/01 15:10:54 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define WIDTH 1280
 # define HEIGHT 720
 # define MOVE_SPEED 0.03
-# define ROT_SPEED 0.01
+# define ROT_SPEED 0.02
 
 # define BLUE_SKY 0x87CEEB
 # define GREEN_GRASS 0x00FF00

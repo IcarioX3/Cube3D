@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inputs_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icario <icario@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ablevin <ablevin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:17:32 by icario            #+#    #+#             */
-/*   Updated: 2023/08/27 20:13:07 by icario           ###   ########.fr       */
+/*   Updated: 2023/09/01 15:36:36 by ablevin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ void	mouse_move(t_game *game)
 	old_x = x;
 }
 
-//open door if player is in front of it at a distance of one block
 void	open_and_close_door(t_game *game)
 {
 	int	x;
 	int	y;
 
-	x = (int)(game->player.pos_x + game->player.dir_x);
-	y = (int)(game->player.pos_y + game->player.dir_y);
+	x = (int)(game->player.pos_x + game->player.dir_x * 1.42);
+	y = (int)(game->player.pos_y + game->player.dir_y * 1.42);
+	printf("current map case: %c\n", game->vars->map[x][y]);
 	if (game->vars->map[x][y] == '2')
 		game->vars->map[x][y] = '3';
 	else if (game->vars->map[x][y] == '3')
